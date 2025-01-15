@@ -3,7 +3,7 @@
     class="Header flex items-center justify-between bg-cover"
     :style="{ backgroundImage: `url(${backgroundImage})` }">
     <!-- ロゴ -->
-    <div class="logo">
+    <div class="header-logo">
       <img :src="logoImage" alt="Logo" class="logo-image" />
     </div>
     <div class="action">

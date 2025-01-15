@@ -5,13 +5,7 @@
 
 
 @layer base {
-  :root {
-    --font-size-text: 18px;
-    --font-size-heading: 24px;
-  }
-  p{
-    font-size: var(--font-size-text)
-  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -86,3 +80,4 @@
     @apply bg-background text-foreground;
   }
 }
+

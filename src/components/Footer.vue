@@ -2,27 +2,31 @@
   <div class="Footer">
     <div class="info-container">
       <div class="reserve-container">
-        <img
-          src="@/assets/images/boxlogo_white.png"
-          alt="カールふるびら"
-          class="logo" />
         <ReserveButton />
-      </div>
-      <p class="address">〒046-0102 北海道古平郡古平町丸山町103</p>
-      <p class="email">yohey.watanave@gmail.com</p>
-      <div class="social-icons">
-        <!-- <a href="#" class="icon">
+        <div class="social-icons">
+          <!-- <a href="#" class="icon">
           <img
             src="@/assets/images/facebook_logo.png"
             alt="Facebook"
             class="social-logo" />
         </a> -->
-        <a href="#" class="icon">
-          <img
-            src="@/assets/images/Instagram_logo.png"
-            alt="Instagram"
-            class="social-logo" />
-        </a>
+          <a href="#" class="icon">
+            <img
+              src="@/assets/images/Instagram_logo.png"
+              alt="Instagram"
+              class="social-logo" />
+          </a>
+        </div>
+      </div>
+      <div class="description">
+        <img
+          src="@/assets/images/boxlogo_white.png"
+          alt="カールふるびら"
+          class="logo" />
+        <div class="text">
+          <p class="address">〒046-0102 北海道古平郡古平町丸山町103</p>
+          <p class="email">yohey.watanave@gmail.com</p>
+        </div>
       </div>
     </div>
   </div>
@@ -52,13 +56,6 @@ export default {
   align-items: center;
   margin-top: 1rem;
 }
-.reserve-container {
-  margin: 0 0 5rem 0;
-}
-.logo {
-  max-width: 200px;
-  margin-bottom: 1rem;
-}
 
 .address,
 .email {
@@ -85,5 +82,16 @@ export default {
 
 .icon:hover {
   text-decoration: underline;
+}
+.description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.description .logo {
+  width: 200px;
+}
+.description p {
+  color: #fff;
 }
 </style>

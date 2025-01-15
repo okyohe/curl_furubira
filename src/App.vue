@@ -40,34 +40,86 @@ export default {
   },
 };
 </script>
-
 <style>
-/* Add global styles here */
 :root {
   --font-size-text: 16px;
-  --font-size-heading: 24px;
+  --font-size-cta: 18px;
+  --font-size-heading: 20px;
 }
-
-p,
-a {
-  font-size: var(--font-size-text);
-  font-family: "Noto Sans JP", serif;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-button,
-div {
+h6 {
   font-size: var(--font-size-heading);
   font-family: "Zen Old Mincho", serif;
   font-weight: 600;
   font-style: normal;
 }
+button,
+div,
+a {
+  font-size: var(--font-size-cta);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #000333;
+}
+div,
+p,
+span {
+  font-size: var(--font-size-text);
+  font-family: "Noto Sans JP", serif;
+  font-optical-sizing: auto;
+  color: #000333;
+}
 section {
   padding: 2rem 0;
+}
+
+.content {
+  width: 67%;
+  max-width: 990px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+}
+.logo {
+  width: 300px;
+  margin-bottom: 2rem;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.beige {
+  background-image: url(import.meta.env.VITE_BACKGROUND_IMAGE_BEIGE);
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+section.navy {
+  background-image: url(import.meta.env.VITE_BACKGROUND_IMAGE_NAVY);
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+section.kamui {
+  background-image: url(import.meta.env.VITE_BACKGROUND_IMAGE_KAMUI);
+  background-repeat: repeat;
+  background-size: auto;
+}
+.tiny-heading-line {
+  border: 0;
+  height: 1px;
+  background-color: #000;
+  margin: 1rem 0;
 }
 </style>

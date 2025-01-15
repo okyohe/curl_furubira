@@ -23,6 +23,8 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600&display=swap");
+
 .Fv {
   position: relative;
   height: calc(100vh - 100px); /* ヘッダーの高さを指定してください */
@@ -52,7 +54,8 @@ export default {
 }
 
 .logo {
-  max-width: 50%;
+  width: 50%;
+  max-width: 600px;
   height: auto;
   margin-bottom: 20px;
 }
@@ -64,29 +67,37 @@ export default {
   transform: translateY(-30%);
   writing-mode: vertical-rl;
   text-align: left;
+}
+
+.vertical-text h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.vertical-text span {
   font-family: "Zen Old Mincho", serif;
   font-weight: 600;
   font-style: normal;
-  letter-spacing: 6px;
-  font-size: var(--font-size-heading);
+  display: inline-block;
 }
 
-.highlight {
+.vertical-text .highlight {
   background-color: #000333;
   color: white;
   padding: 10px 5px;
   margin: 5px;
-  margin-bottom: 10px;
-  font-size: var(--font-size-heading);
-  display: inline-block;
+  font-size: var(--font-size-heading, 1.5rem);
   white-space: nowrap;
+  letter-spacing: 6px;
 }
 
 .highlight:nth-child(2) {
-  margin-top: 36px; /* 1文字分下に下げる */
+  margin-top: 36px; /* 2つ目の文章を下げる */
 }
+
 @media (max-width: 768px) {
-  .Header {
+  .Fv {
     height: calc(100vh - 68px);
   }
 }

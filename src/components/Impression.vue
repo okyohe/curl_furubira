@@ -1,6 +1,6 @@
 ﻿<template>
-  <div class="experience-plan">
-    <div class="first-content">
+  <section>
+    <div class="first-content content">
       <div class="left-content">
         <div class="text-content">
           <p>効率性から脱却し</p>
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="second-content">
+    <div class="second-content content">
       <div class="description">
         <p>和風の古民家でもなく、現代風でもない、小さな町の</p>
         <p>住宅街の中にあるただの少し大きい古い家です。</p>
@@ -50,15 +50,17 @@
         </a>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
-.experience-plan {
+section {
   background-image: url("../assets/images/background_beige.png");
   background-repeat: repeat;
   background-size: auto;
-  font-family: "zen old mincho", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section-1,
@@ -76,10 +78,9 @@ section {
 .first-content {
   display: flex;
   flex-direction: row;
-  max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  padding: 20px;
+  padding: 20px 0;
 }
 .right-content {
   display: flex;
@@ -88,7 +89,6 @@ section {
 
 .second-content {
   display: flex;
-  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   flex-direction: column;
@@ -101,7 +101,6 @@ section {
 .left-content,
 .right-content {
   flex: 1;
-  padding: 20px;
 }
 
 .left-image,
@@ -127,6 +126,7 @@ section {
   align-items: center;
   padding: 20px 10px;
   margin: 0 3rem;
+  height: 75vh;
 }
 
 .divider-text {
@@ -146,10 +146,6 @@ section {
   font-size: var(--font-size-text);
 }
 
-.logo img {
-  max-width: 300px;
-}
-
 .cta-button button {
   padding: 12px 40px;
   border: 1px solid #1a1a3a;
@@ -157,11 +153,6 @@ section {
   background: transparent;
   cursor: pointer;
   font-size: var(--font-size-heading);
-}
-
-.social-links img {
-  width: 30px;
-  height: 30px;
 }
 
 .intro-text {
@@ -177,7 +168,7 @@ section {
   }
 
   .vertical-divider {
-    width: 100%;
+    width: 100vw;
     margin: 0;
   }
   .divider-text {
@@ -186,7 +177,6 @@ section {
   .left-image,
   .right-image {
     position: static;
-    width: 100%;
   }
   .right-content {
     flex-direction: column;

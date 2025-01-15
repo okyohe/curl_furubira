@@ -4,11 +4,11 @@
       :title-ja="'滞在の楽しみ方'"
       :title-en="'During Stay'"
       :isWhite="true" />
-    <div class="content-wrapper">
+    <div class="content-wrapper content">
       <!-- Day marker -->
       <h3 class="day-title">
         <div class="day-marker">
-          <span class="day-number">DAY1</span>
+          <h4 class="day-number">DAY1</h4>
         </div>
         <span class="day-description"> 秘境ふるびらを味わう </span>
       </h3>
@@ -44,11 +44,11 @@
         </div>
       </div>
     </div>
-    <div class="content-wrapper day2">
+    <div class="content-wrapper day2 content">
       <!-- Day marker -->
       <h3 class="day-title">
         <div class="day-marker">
-          <span class="day-number">DAY2</span>
+          <h4 class="day-number">DAY2</h4>
         </div>
         <span class="day-description"> ふるびら周辺をドライブ </span>
       </h3>
@@ -179,13 +179,12 @@ section {
 }
 
 .content-wrapper {
-  max-width: 80%;
-  width: 800px;
   margin: 0 auto;
   position: relative;
   padding: 2rem;
   border: 1px solid #ffffff;
   margin: 2rem 0;
+  display: grid;
 }
 
 .day-title {
@@ -198,9 +197,11 @@ section {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  width: 100%;
   flex-wrap: wrap;
   margin: 1rem 0 0 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .day-marker {
@@ -224,10 +225,15 @@ section {
 .day-number {
   font-size: 1.5rem;
   font-weight: 600;
+  font-size: var(--font-size-heading);
 }
 
 .day-description {
   color: #e3dac2;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: var(--font-size-heading);
 }
 
 .timeline {
@@ -259,11 +265,13 @@ section {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .timeline-item {
   position: relative;
-  width: 100%;
   height: 12.5rem;
   justify-content: center;
   align-content: center;
@@ -289,6 +297,9 @@ section {
   justify-content: center;
   font-size: 1.25rem;
   font-weight: 600;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .day2 .marker-circle {
@@ -300,6 +311,9 @@ section {
   color: #e3dac2;
   font-size: 1.125rem;
   white-space: pre-line;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .image-grid {

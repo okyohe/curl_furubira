@@ -4,72 +4,63 @@
       <SmallHeading :title-ja="'施設紹介'" :title-en="'facility'" />
       <!-- 画像セクション -->
       <div class="image-section">
-        <div class="image-row">
+        <div class="image-row first-row">
           <img src="@/assets/images/background_kamui.png" alt="画像1" />
+        </div>
+        <div class="image-row second-row">
           <img src="@/assets/images/background_kamui.png" alt="画像2" />
           <img src="@/assets/images/background_kamui.png" alt="画像3" />
-        </div>
-        <div class="image-row">
           <img src="@/assets/images/background_kamui.png" alt="画像4" />
-          <img src="@/assets/images/background_kamui.png" alt="画像5" />
         </div>
       </div>
 
       <!-- 部屋セクション -->
-      <div class="room-section">
+      <div class="room-section content">
         <Card>
-          <CardHeader>
-            <CardTitle>リビング</CardTitle>
-          </CardHeader>
-          <CardContent>
+          <div style="text-align: center">
             <img
               src="@/assets/images/background_kamui.png"
               alt="リビング画像"
               class="room-image" />
+            <h3>リビング</h3>
             <p>皆で集まれる広々スペース</p>
-          </CardContent>
+          </div>
         </Card>
         <Card>
-          <CardHeader>
-            <CardTitle>寝室</CardTitle>
-          </CardHeader>
-          <CardContent>
+          <div style="text-align: center">
             <img
               src="@/assets/images/background_kamui.png"
               alt="寝室画像"
               class="room-image" />
+            <h3>寝室</h3>
             <p>和室でゆっくりとお休みいただけます</p>
-          </CardContent>
+          </div>
         </Card>
         <Card>
-          <CardHeader>
-            <CardTitle>キッチン</CardTitle>
-          </CardHeader>
-          <CardContent>
+          <div style="text-align: center">
             <img
               src="@/assets/images/background_kamui.png"
               alt="キッチン画像"
               class="room-image" />
+            <h3>キッチン</h3>
             <p>炊飯器、電子レンジ、オーブンを備えております</p>
-          </CardContent>
+          </div>
         </Card>
         <Card>
-          <CardHeader>
-            <CardTitle>温泉</CardTitle>
-          </CardHeader>
-          <CardContent>
+          <div style="text-align: center">
             <img
               src="@/assets/images/background_kamui.png"
               alt="温泉画像"
               class="room-image" />
+            <h3>温泉</h3>
             <p>近郊のふるびら温泉で至福のひとときを</p>
-          </CardContent>
+          </div>
         </Card>
       </div>
 
       <!-- アメニティセクション -->
-      <div class="amenity-section">
-        <Heading title="アメニティ・備品" />
+      <div class="amenity-section content">
+        <SmallHeading title-ja="アメニティ・備品" />
         <p>持ち帰り可能（使い捨て）: 歯ブラシ、歯磨きセット、綿棒</p>
         <p>
           持ち帰り不可（備え付け）:
@@ -78,7 +69,7 @@
       </div>
 
       <!-- CTAセクション -->
-      <div class="cta-section">
+      <div class="cta-section content">
         <img src="@/assets/images/boxlogo_navy.png" alt="ロゴ" class="logo" />
         <ReserveButton />
       </div>
@@ -88,7 +79,7 @@
 
 <script>
 import SmallHeading from "./ui/SmallHeading.vue";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader } from "@/components/ui/card";
 import ReserveButton from "@/components/ui/ReserveButton.vue";
 
 export default {
@@ -96,9 +87,7 @@ export default {
   components: {
     SmallHeading,
     Card,
-    CardContent,
     CardHeader,
-    CardTitle,
     ReserveButton,
   },
 };
@@ -116,9 +105,8 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 100%;
-  max-width: 1200px;
   align-items: center;
+  width: 100vw;
 }
 
 .image-row {
@@ -126,24 +114,24 @@ export default {
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  max-width: 1200px;
   justify-content: space-around;
 }
 
 .image-row:nth-child(1) img {
-  width: 33%;
-  height: auto;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 .image-row:nth-child(2) img {
-  width: 50%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .room-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  width: 60%;
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,5 @@
 <template>
-  <div class="small-heading">
+  <div class="small-heading content">
     <div
       class="title-container"
       :style="isWhite ? { color: '#fff' } : { color: 'inherit' }">
@@ -38,7 +38,6 @@ export default {
 <style scoped>
 .small-heading {
   text-align: center;
-  width: 70%;
   display: block;
   margin-bottom: 2rem;
 }
