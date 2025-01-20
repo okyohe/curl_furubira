@@ -1,14 +1,16 @@
 <template>
   <div id="app">
     <Header />
-    <Fv />
-    <Impression />
-    <Facility />
-    <ExperiencePlan />
-    <DuringStay />
-    <Access />
-    <AccommodationFee />
-    <LastPhoto />
+    <main>
+      <Fv id="fv" />
+      <Impression id="impression" />
+      <Facility id="facility" />
+      <ExperiencePlan id="experiencePlan" />
+      <DuringStay id="duringStay" />
+      <Access id="access" />
+      <AccommodationFee id="accommodationFee" />
+      <LastPhoto id="lastPhoto" />
+    </main>
     <Footer />
   </div>
 </template>
@@ -121,5 +123,11 @@ section.kamui {
   height: 1px;
   background-color: #000;
   margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .content {
+    width: 90%;
+  }
 }
 </style>

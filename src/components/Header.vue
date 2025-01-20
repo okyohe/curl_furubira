@@ -1,7 +1,8 @@
 ﻿<template>
-  <div
+  <header
     class="Header flex items-center justify-between bg-cover"
-    :style="{ backgroundImage: `url(${backgroundImage})` }">
+    :style="{ backgroundImage: `url(${backgroundImage})` }"
+    @mouseleave="isOpen = false">
     <!-- ロゴ -->
     <div class="header-logo">
       <img :src="logoImage" alt="Logo" class="logo-image" />
@@ -14,21 +15,38 @@
       </button>
 
       <!-- ハンバーガーメニュー -->
-      <div class="hamburger-menu cursor-pointer" @click="toggleMenu">
+      <div class="hamburger-menu cursor-pointer" @mouseover="isOpen = true">
         <div :class="['line', isOpen ? 'open-line1' : '']"></div>
         <div :class="['line', isOpen ? 'open-line2' : '']"></div>
       </div>
 
       <!-- モバイルメニュー -->
-      <div v-if="isOpen" class="mobile-menu bg-white text-black p-4">
+      <div
+        v-if="isOpen"
+        class="mobile-menu bg-white text-black p-4"
+        @mouseleave="isOpen = false">
         <ul>
-          <li class="py-2">メニュー1</li>
-          <li class="py-2">メニュー2</li>
-          <li class="py-2">メニュー3</li>
+          <li class="py-2 cursor-pointer" @click="scrollToSection('facility')">
+            施設のご案内
+          </li>
+
+          <li
+            class="py-2 cursor-pointer"
+            @click="scrollToSection('duringStay')">
+            滞在の楽しみ方
+          </li>
+          <li class="py-2 cursor-pointer" @click="scrollToSection('access')">
+            アクセス
+          </li>
+          <li
+            class="py-2 cursor-pointer"
+            @click="scrollToSection('accommodationFee')">
+            宿泊料金
+          </li>
         </ul>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -48,6 +66,12 @@ export default {
     toggleMenu() {
       this.isOpen = !this.isOpen;
     },
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    },
   },
 };
 </script>
@@ -55,6 +79,9 @@ export default {
 <style scoped>
 /* 全体のヘッダー */
 .Header {
+  position: fixed; /* ヘッダーを固定 */
+  top: 0; /* 上部に配置 */
+  left: 0; /* 左端に配置 */
   width: 100%;
   height: 100px;
   display: flex;
@@ -62,6 +89,7 @@ export default {
   justify-content: space-between;
   padding: 0 16px;
   font-size: var(--font-size-heading);
+  z-index: 1000; /* 他の要素の上に表示 */
 }
 
 /* ロゴ */
@@ -80,6 +108,7 @@ export default {
   flex-direction: column;
   gap: 11px;
   justify-content: center;
+  cursor: pointer; /* カーソルをポインターに変更 */
 }
 
 .hamburger-menu .line {
@@ -107,12 +136,17 @@ export default {
 /* モバイルメニュー */
 .mobile-menu {
   position: absolute;
-  top: 100px;
+  top: 80px;
   right: 0;
   width: 200px;
-  border: 1px solid #ccc;
   border-radius: 4px;
   z-index: 10;
+  background-image: url("../assets/images/background_beige.png");
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #000333;
+  box-shadow: 0.1rem 0.1rem 1rem #00033399;
 }
 
 /* メディアクエリ */
@@ -133,5 +167,10 @@ export default {
     width: 25px;
     height: 2px;
   }
+}
+
+.hamburger-menu:hover .line {
+  /* ホバー時のスタイルを追加 */
+  background-color: rgb(255, 255, 255); /* 必要に応じて色を変更 */
 }
 </style>

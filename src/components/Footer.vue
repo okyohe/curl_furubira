@@ -1,5 +1,5 @@
 ﻿<template>
-  <div class="Footer">
+  <footer class="Footer">
     <div class="info-container">
       <div class="reserve-container">
         <ReserveButton />
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -87,6 +87,8 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .description .logo {
   width: 200px;

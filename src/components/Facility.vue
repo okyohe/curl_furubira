@@ -1,7 +1,7 @@
 ﻿<template>
   <section>
     <div class="facility">
-      <SmallHeading :title-ja="'施設紹介'" :title-en="'facility'" />
+      <SmallHeading :title-ja="'施設'" :title-en="'facility'" />
       <!-- 画像セクション -->
       <div class="image-section">
         <div class="image-row first-row">
@@ -57,10 +57,9 @@
           </div>
         </Card>
       </div>
-
+      <SmallHeading title-ja="備品" />
       <!-- アメニティセクション -->
       <div class="amenity-section content">
-        <SmallHeading title-ja="アメニティ・備品" />
         <p>持ち帰り可能（使い捨て）: 歯ブラシ、歯磨きセット、綿棒</p>
         <p>
           持ち帰り不可（備え付け）:
@@ -106,13 +105,13 @@ export default {
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  width: 100vw;
+  width: 99vw;
 }
 
 .image-row {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.3%;
   width: 100%;
   justify-content: space-around;
 }
@@ -125,7 +124,7 @@ export default {
 .image-row:nth-child(2) img {
   height: 200px;
   object-fit: cover;
-  width: 100%;
+  width: 33%;
 }
 
 .room-section {
@@ -135,6 +134,20 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .image-section {
+    width: 100%;
+  }
+  .image-row:first-child {
+    display: none;
+  }
+  .image-row:nth-child(2) {
+    flex-direction: column;
+    gap: 0;
+  }
+  .image-row:nth-child(2) img {
+    height: 260px;
+    width: 100%;
+  }
   .room-section {
     grid-template-columns: 1fr;
   }

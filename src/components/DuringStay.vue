@@ -29,6 +29,10 @@
                 <div class="marker-circle">{{ item.number }}</div>
               </div>
               <div class="timeline-text">{{ item.text }}</div>
+              <img
+                :src="rowImages[item.number - 1].src"
+                :alt="rowImages[item.number - 1].alt"
+                class="image-item mobile-image" />
             </div>
           </div>
         </div>
@@ -40,7 +44,7 @@
             :key="index"
             :src="img.src"
             :alt="img.alt"
-            class="image-item" />
+            class="image-item desktop-image" />
         </div>
       </div>
     </div>
@@ -62,7 +66,7 @@
             :key="index"
             :src="img.src"
             :alt="img.alt"
-            class="image-item" />
+            class="image-item desktop-image" />
         </div>
         <!-- Right side - Timeline -->
         <div class="timeline-left">
@@ -78,6 +82,10 @@
                 <div class="marker-circle">{{ item.number }}</div>
               </div>
               <div class="timeline-text">{{ item.text }}</div>
+              <img
+                :src="rowImagesDay2[item.number - 1].src"
+                :alt="rowImagesDay2[item.number - 1].alt"
+                class="image-item mobile-image" />
             </div>
           </div>
         </div>
@@ -127,6 +135,7 @@ const rowImages = ref([
     alt: "Group gathering",
   },
 ]);
+
 const timelineItemsDay2 = ref([
   {
     number: 1,
@@ -153,7 +162,7 @@ const rowImagesDay2 = ref([
   },
   {
     src: new URL("@/assets/images/background_kamui.png", import.meta.url).href,
-    alt: "Yamashime Ban’ya",
+    alt: "Yamashime Ban'ya",
   },
   {
     src: new URL("@/assets/images/background_kamui.png", import.meta.url).href,
@@ -184,24 +193,16 @@ section {
   padding: 2rem;
   border: 1px solid #ffffff;
   margin: 2rem 0;
-  display: grid;
 }
 
 .day-title {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
-  margin: 1rem 0 0 0;
+  margin: 1rem 0;
   font-family: "Zen Old Mincho", serif;
   font-weight: 600;
-  font-style: normal;
 }
 
 .day-marker {
@@ -238,27 +239,22 @@ section {
 
 .timeline {
   margin-top: 4rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
   gap: 2rem;
-}
-.day2 .timeline {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
 }
 
 .timeline-left {
   position: relative;
-  height: 12.5rem;
+  flex: 1;
 }
 
 .timeline-line {
   position: absolute;
-  left: 2rem;
-  top: 2rem;
-  bottom: 2rem;
+  left: 1.4rem;
+  top: 5rem;
+  bottom: 5rem;
   width: 1px;
-  background-color: #3a4352;
+  background-color: rgba(227, 218, 194, 0.5);
 }
 
 .timeline-items {
@@ -273,9 +269,6 @@ section {
 .timeline-item {
   position: relative;
   height: 12.5rem;
-  justify-content: center;
-  align-content: center;
-  justify-content: center;
   display: flex;
   align-items: center;
 }
@@ -317,8 +310,9 @@ section {
 }
 
 .image-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 
@@ -326,5 +320,54 @@ section {
   object-fit: cover;
   width: 100%;
   height: 12.5rem;
+}
+
+.mobile-image {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .timeline {
+    flex-direction: column;
+  }
+  .timeline-line {
+    left: 1.4rem;
+    top: 3rem;
+    bottom: 18rem;
+    width: 1px;
+    background-color: rgba(227, 218, 194, 0.5);
+  }
+
+  .image-grid {
+    display: none;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-text {
+    margin-left: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile-image {
+    display: block;
+  }
+
+  .desktop-image {
+    display: none;
+  }
+
+  .day2 .timeline {
+    flex-direction: column;
+  }
+
+  .day2 .image-grid {
+    order: 2;
+  }
 }
 </style>

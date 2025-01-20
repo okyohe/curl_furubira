@@ -166,10 +166,13 @@ section {
   .first-content {
     flex-direction: column;
   }
-
+  .first-content .text-content {
+    line-height: 1.7;
+  }
   .vertical-divider {
-    width: 100vw;
+    width: 97vw;
     margin: 0;
+    height: auto;
   }
   .divider-text {
     writing-mode: horizontal-tb;
@@ -177,9 +180,13 @@ section {
   .left-image,
   .right-image {
     position: static;
+    width: 100%;
   }
   .right-content {
-    flex-direction: column;
+    display: none;
+  }
+  .second-content {
+    margin-top: 2rem;
   }
 }
 </style>

@@ -27,7 +27,7 @@ export default {
 
 .Fv {
   position: relative;
-  height: calc(100vh - 100px); /* ヘッダーの高さを指定してください */
+  height: 100vh; /* ヘッダーの高さを指定してください */
   overflow: hidden;
 }
 
@@ -99,6 +99,22 @@ export default {
 @media (max-width: 768px) {
   .Fv {
     height: calc(100vh - 68px);
+  }
+  .vertical-text {
+    position: relative;
+    top: 0;
+    display: flex;
+  }
+  .vertical-text h2 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .vertical-text .highlight {
+    background-color: rgba(255, 255, 255, 0);
+    writing-mode: horizontal-tb;
+    margin: 0;
+    text-align: center;
   }
 }
 </style>
