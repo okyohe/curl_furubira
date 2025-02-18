@@ -40,9 +40,9 @@
         <img src="../assets/images/boxlogo_navy.png" alt="Curl Furubira logo" />
       </div>
 
-      <div class="cta-button">
+      <!-- <div class="cta-button">
         <button>宿について詳しく知る</button>
-      </div>
+      </div> -->
 
       <div class="social-links">
         <a href="https://www.instagram.com/curl_furubira/" target="_blank">
@@ -154,7 +154,9 @@ section {
   cursor: pointer;
   font-size: var(--font-size-heading);
 }
-
+.logo {
+  max-width: 200px;
+}
 .intro-text {
   text-align: center;
   line-height: 1.8;

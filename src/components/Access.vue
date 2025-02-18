@@ -13,7 +13,10 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
 
       <div class="logo-container">
-        <img src="../assets/images/boxlogo_navy.png" alt="Curl Furubira logo" />
+        <img
+          class="logo"
+          src="../assets/images/boxlogo_navy.png"
+          alt="Curl Furubira logo" />
         <p>駐車場完備（2台）</p>
         <p>〒046-0102 北海道古平郡古平町丸山町103</p>
       </div>
@@ -92,8 +95,16 @@ section {
 .logo-container p {
   text-decoration: underline;
 }
+.logo {
+  max-width: 200px;
+}
 
 iframe {
   min-height: 400px;
+}
+@media (max-width: 360px) {
+  .info-container {
+    padding: 2rem 0.5rem;
+  }
 }
 </style>

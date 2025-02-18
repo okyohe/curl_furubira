@@ -105,11 +105,11 @@ const timelineItems = ref([
   },
   {
     number: 2,
-    text: "「鹿の灯」を手作り",
+    text: "ふるびら地元の方と\n「茶道」を体験",
   },
   {
     number: 3,
-    text: "ふるびら温泉へ",
+    text: "鉄分たっぷりで心も体も温まる\nふるびら温泉へ",
   },
   {
     number: 4,
@@ -368,6 +368,17 @@ section {
 
   .day2 .image-grid {
     order: 2;
+  }
+}
+
+/* 360px以下のスタイルを追加 */
+@media (max-width: 360px) {
+  .content-wrapper {
+    border: none; /* borderをnoneに設定 */
+  }
+  .content {
+    width: 100vw; /* widthを100vwに設定 */
+    padding: 0.5rem;
   }
 }
 </style>
