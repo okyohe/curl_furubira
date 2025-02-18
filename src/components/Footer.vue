@@ -47,9 +47,10 @@ export default {
 
 <style scoped>
 .Footer {
-  background-color: #2b2b2b;
+  background-image: url("../assets/images/background_navy.png");
   color: #fff;
   padding: 2rem;
+  padding-bottom: 4rem;
   text-align: center;
 }
 

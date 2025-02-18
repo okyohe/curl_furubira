@@ -8,7 +8,7 @@
           <p>田舎没入型民泊「カールふるびら」</p>
         </div>
         <div class="left-image">
-          <img src="../assets/images/background_kamui.png" alt="kamui image" />
+          <img src="../assets/images/room/house_summer.jpg" alt="kamui image" />
         </div>
       </div>
       <div class="vertical-divider">
@@ -22,7 +22,9 @@
         </div>
 
         <div class="right-image">
-          <img src="../assets/images/background_kamui.png" alt="kamui image" />
+          <img
+            src="../assets/images/experience/sightsee.jpg"
+            alt="kamui image" />
         </div>
       </div>
     </div>

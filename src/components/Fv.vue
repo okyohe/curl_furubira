@@ -1,9 +1,14 @@
 ﻿<template>
   <div class="Fv">
-    <img
-      src="@/assets/images/background_kamui.png"
-      class="background"
-      alt="背景画像" />
+    <picture>
+      <source
+        srcset="@/assets/images/room/house-vertical.jpg"
+        media="(max-width: 768px)" />
+      <img
+        src="@/assets/images/room/house-horizontal.jpg"
+        class="background"
+        alt="背景画像" />
+    </picture>
     <div class="overlay">
       <img src="@/assets/images/boxlogo_white.png" class="logo" alt="ロゴ" />
       <div class="vertical-text">
@@ -100,10 +105,20 @@ export default {
   .Fv {
     height: calc(100vh - 68px);
   }
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    width: 70%;
+  }
   .vertical-text {
     position: relative;
     top: 0;
     display: flex;
+    display: none;
   }
   .vertical-text h2 {
     display: flex;

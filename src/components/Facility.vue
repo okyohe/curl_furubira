@@ -1,25 +1,16 @@
 ﻿<template>
   <section>
     <div class="facility">
-      <SmallHeading :title-ja="'施設'" :title-en="'facility'" />
-
-      <!-- 画像セクション -->
+      <!-- 画像セクション（縦画像用） -->
       <div class="image-section">
-        <div
-          class="image-row"
-          :class="{
-            'first-row': row.index === 0,
-            'second-row': row.index === 1,
-          }"
-          v-for="(row, rowIndex) in imageRows"
-          :key="rowIndex">
-          <img
-            v-for="(image, imgIndex) in row.images"
-            :key="imgIndex"
-            :src="image.src"
-            :alt="image.alt" />
-        </div>
+        <img
+          v-for="(image, index) in verticalImages"
+          :key="index"
+          :src="image.src"
+          :alt="image.alt"
+          class="vertical-image" />
       </div>
+      <SmallHeading :title-ja="'施設'" :title-en="'facility'" />
 
       <!-- 部屋セクション -->
       <div class="room-section content">
@@ -66,6 +57,10 @@ import kitchenImg from "@/assets/images/room/kitchen.jpg";
 import tokonomaImg from "@/assets/images/room/tokonoma.jpg";
 import bedroomImg from "@/assets/images/room/bedroom.jpg";
 import boxLogoNavy from "@/assets/images/boxlogo_navy.png";
+import enjoyDinner from "@/assets/images/experience/enjoy_dinner-min.jpg";
+import enjoyDrinking from "@/assets/images/experience/enjoy_drinking-min.jpg";
+import enjoySauna from "@/assets/images/experience/enjoy_sauna-min.jpg";
+import festivalImg from "@/assets/images/experience/festival.jpg";
 
 export default {
   name: "Facility",
@@ -76,35 +71,25 @@ export default {
   },
   data() {
     return {
-      // ロゴ画像のインポート
+      // ロゴ画像の定義
       logo: boxLogoNavy,
-
-      imageRows: [
+      // 縦画像として表示するための画像リスト
+      verticalImages: [
         {
-          index: 0,
-          images: [
-            {
-              src: backgroundKamui1,
-              alt: "画像1",
-            },
-          ],
+          src: festivalImg,
+          alt: "夏祭り",
         },
         {
-          index: 1,
-          images: [
-            {
-              src: backgroundKamui2,
-              alt: "画像2",
-            },
-            {
-              src: backgroundKamui3,
-              alt: "画像3",
-            },
-            {
-              src: backgroundKamui4,
-              alt: "画像4",
-            },
-          ],
+          src: enjoySauna,
+          alt: "サウナを楽しむ",
+        },
+        {
+          src: enjoyDrinking,
+          alt: "飲み会を楽しむ",
+        },
+        {
+          src: enjoyDinner,
+          alt: "ディナーを楽しむ",
         },
       ],
       rooms: [
@@ -124,7 +109,7 @@ export default {
           image: tokonomaImg,
           alt: "床の間画像",
           title: "床の間",
-          description: "近郊のふるびら温泉で至福のひとときを",
+          description: "くつろぎの和室でボードゲームや団らんのひとときを",
         },
         {
           image: bedroomImg,
@@ -157,6 +142,9 @@ export default {
 </script>
 
 <style scoped>
+section {
+  background-image: url("../assets/images/background_beige.png");
+}
 .facility {
   display: flex;
   flex-direction: column;
@@ -164,30 +152,16 @@ export default {
   gap: 2rem;
 }
 
+/* 画像セクション：縦画像用グリッドレイアウト */
 .image-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  width: 99vw;
-}
-
-.image-row {
-  display: flex;
-  justify-content: space-around;
-  gap: 0.3%;
+  display: grid;
   width: 100%;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.image-row.first-row img {
+.vertical-image {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.image-row.second-row img {
-  width: 33%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -198,19 +172,9 @@ export default {
 }
 
 @media (max-width: 768px) {
+  /* スマホ・タブレットでは2列×2段のグリッド表示 */
   .image-section {
-    width: 100%;
-  }
-  .image-row.first-row {
-    display: none;
-  }
-  .image-row.second-row {
-    flex-direction: column;
-    gap: 0;
-  }
-  .image-row.second-row img {
-    width: 100%;
-    height: 260px;
+    grid-template-columns: repeat(2, 1fr);
   }
   .room-section {
     grid-template-columns: 1fr;

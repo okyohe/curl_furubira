@@ -9,9 +9,9 @@
     </div>
     <div class="action">
       <!-- ご予約ボタン -->
-      <ReserveButton />
+      <ReserveButton class="reserve" />
       <!-- ハンバーガーメニュー -->
-      <div class="hamburger-menu cursor-pointer" @mouseover="isOpen = true">
+      <div class="hamburger-menu cursor-pointer" @click="toggleMenu">
         <div :class="['line', isOpen ? 'open-line1' : '']"></div>
         <div :class="['line', isOpen ? 'open-line2' : '']"></div>
       </div>
@@ -21,6 +21,8 @@
         v-if="isOpen"
         class="mobile-menu bg-white text-black p-4"
         @mouseleave="isOpen = false">
+        <!-- ×ボタン -->
+        <div class="close-button" @click="isOpen = false">&times;</div>
         <ul>
           <li class="py-2 cursor-pointer" @click="scrollToSection('facility')">
             施設のご案内
@@ -125,13 +127,6 @@ export default {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ご予約ボタン */
-.reservation-button {
-  font-family: "Zen Old Mincho", serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
 /* モバイルメニュー */
 .mobile-menu {
   position: absolute;
@@ -146,6 +141,7 @@ export default {
   font-style: normal;
   color: #000333;
   box-shadow: 0.1rem 0.1rem 1rem #00033399;
+  padding-top: 40px; /* ×ボタンのスペースを確保 */
 }
 
 /* メディアクエリ */
@@ -158,10 +154,6 @@ export default {
     height: 60px;
   }
 
-  .hamburger-menu {
-    height: 30px;
-  }
-
   .hamburger-menu .line {
     width: 25px;
     height: 2px;
@@ -171,5 +163,22 @@ export default {
 .hamburger-menu:hover .line {
   /* ホバー時のスタイルを追加 */
   background-color: rgb(255, 255, 255); /* 必要に応じて色を変更 */
+}
+
+/* ×ボタンのスタイル */
+.close-button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+/* 360px以下の画面幅でheaderのボタンを非表示にする */
+@media (max-width: 360px) {
+  .reserve {
+    display: none;
+  }
 }
 </style>

@@ -119,19 +119,20 @@ const timelineItems = ref([
 
 const rowImages = ref([
   {
-    src: new URL("@/assets/images/background_kamui.png", import.meta.url).href,
-    alt: "Writing workshop",
+    src: new URL("@/assets/images/experience/kaisendon.jpg", import.meta.url)
+      .href,
+    alt: "海鮮丼",
   },
   {
-    src: new URL("@/assets/images/background_kamui.png", import.meta.url).href,
-    alt: "Writing workshop",
+    src: new URL("@/assets/images/experience/sado.jpg", import.meta.url).href,
+    alt: "茶道",
   },
   {
-    src: new URL("@/assets/images/background_kamui.png", import.meta.url).href,
+    src: new URL("@/assets/images/experience/onsen.jpg", import.meta.url).href,
     alt: "Traditional onsen",
   },
   {
-    src: new URL("@/assets/images/background_kamui.png", import.meta.url).href,
+    src: new URL("@/assets/images/experience/cheers.jpg", import.meta.url).href,
     alt: "Group gathering",
   },
 ]);
@@ -157,19 +158,22 @@ const timelineItemsDay2 = ref([
 
 const rowImagesDay2 = ref([
   {
-    src: new URL("@/assets/images/background_kamui.png", import.meta.url).href,
-    alt: "Kamui Cape",
+    src: new URL("@/assets/images/experience/kamuimisaki.jpg", import.meta.url)
+      .href,
+    alt: "神威岬",
   },
   {
-    src: new URL("@/assets/images/background_kamui.png", import.meta.url).href,
-    alt: "Yamashime Ban'ya",
+    src: new URL("@/assets/images/experience/banya.jpg", import.meta.url).href,
+    alt: "ヤマシメ番屋",
   },
   {
-    src: new URL("@/assets/images/background_kamui.png", import.meta.url).href,
+    src: new URL("@/assets/images/experience/fruit_park.jpg", import.meta.url)
+      .href,
     alt: "Fruit Park",
   },
   {
-    src: new URL("@/assets/images/background_kamui.png", import.meta.url).href,
+    src: new URL("@/assets/images/experience/nikka-min.jpg", import.meta.url)
+      .href,
     alt: "Nikka Whisky Distillery",
   },
 ]);
