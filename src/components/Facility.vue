@@ -2,74 +2,49 @@
   <section>
     <div class="facility">
       <SmallHeading :title-ja="'施設'" :title-en="'facility'" />
+
       <!-- 画像セクション -->
       <div class="image-section">
-        <div class="image-row first-row">
-          <img src="@/assets/images/background_kamui.png" alt="画像1" />
-        </div>
-        <div class="image-row second-row">
-          <img src="@/assets/images/background_kamui.png" alt="画像2" />
-          <img src="@/assets/images/background_kamui.png" alt="画像3" />
-          <img src="@/assets/images/background_kamui.png" alt="画像4" />
+        <div
+          class="image-row"
+          :class="{
+            'first-row': row.index === 0,
+            'second-row': row.index === 1,
+          }"
+          v-for="(row, rowIndex) in imageRows"
+          :key="rowIndex">
+          <img
+            v-for="(image, imgIndex) in row.images"
+            :key="imgIndex"
+            :src="image.src"
+            :alt="image.alt" />
         </div>
       </div>
 
       <!-- 部屋セクション -->
       <div class="room-section content">
-        <Card>
+        <Card v-for="(room, index) in rooms" :key="index">
           <div style="text-align: center">
-            <img
-              src="@/assets/images/background_kamui.png"
-              alt="リビング画像"
-              class="room-image" />
-            <h3>リビング</h3>
-            <p>皆で集まれる広々スペース</p>
-          </div>
-        </Card>
-        <Card>
-          <div style="text-align: center">
-            <img
-              src="@/assets/images/background_kamui.png"
-              alt="寝室画像"
-              class="room-image" />
-            <h3>寝室</h3>
-            <p>和室でゆっくりとお休みいただけます</p>
-          </div>
-        </Card>
-        <Card>
-          <div style="text-align: center">
-            <img
-              src="@/assets/images/background_kamui.png"
-              alt="キッチン画像"
-              class="room-image" />
-            <h3>キッチン</h3>
-            <p>炊飯器、電子レンジ、オーブンを備えております</p>
-          </div>
-        </Card>
-        <Card>
-          <div style="text-align: center">
-            <img
-              src="@/assets/images/background_kamui.png"
-              alt="温泉画像"
-              class="room-image" />
-            <h3>温泉</h3>
-            <p>近郊のふるびら温泉で至福のひとときを</p>
+            <img :src="room.image" :alt="room.alt" class="room-image" />
+            <h3>{{ room.title }}</h3>
+            <p>{{ room.description }}</p>
           </div>
         </Card>
       </div>
+
       <SmallHeading title-ja="備品" :title-en="'amenity'" />
+
       <!-- アメニティセクション -->
       <div class="amenity-section content">
-        <p>持ち帰り可能（使い捨て）: 歯ブラシ、歯磨きセット、綿棒</p>
         <p>
           持ち帰り不可（備え付け）:
-          枕カバー、シーツ、ハンドタオル、バスタオル、ドライヤー、スリッパ、ヘアアイロン、トイレットペーパー、シャンプー、コンディショナー、ボディーソープ、ハンドソープ、炊飯器、電子レンジ、オーブン、Wi-Fi(約200Mbps)
+          {{ amenities.join("、") }}
         </p>
       </div>
 
       <!-- CTAセクション -->
       <div class="cta-section content">
-        <img src="@/assets/images/boxlogo_navy.png" alt="ロゴ" class="logo" />
+        <img :src="logo" alt="ロゴ" class="logo" />
         <ReserveButton />
       </div>
     </div>
@@ -78,16 +53,105 @@
 
 <script>
 import SmallHeading from "./ui/SmallHeading.vue";
-import { Card, CardHeader } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import ReserveButton from "@/components/ui/ReserveButton.vue";
+
+// 画像のインポート
+import backgroundKamui1 from "@/assets/images/background_kamui.png";
+import backgroundKamui2 from "@/assets/images/background_kamui.png";
+import backgroundKamui3 from "@/assets/images/background_kamui.png";
+import backgroundKamui4 from "@/assets/images/background_kamui.png";
+import diningImg from "@/assets/images/room/dining.jpg";
+import kitchenImg from "@/assets/images/room/kitchen.jpg";
+import tokonomaImg from "@/assets/images/room/tokonoma.jpg";
+import bedroomImg from "@/assets/images/room/bedroom.jpg";
+import boxLogoNavy from "@/assets/images/boxlogo_navy.png";
 
 export default {
   name: "Facility",
   components: {
     SmallHeading,
     Card,
-    CardHeader,
     ReserveButton,
+  },
+  data() {
+    return {
+      // ロゴ画像のインポート
+      logo: boxLogoNavy,
+
+      imageRows: [
+        {
+          index: 0,
+          images: [
+            {
+              src: backgroundKamui1,
+              alt: "画像1",
+            },
+          ],
+        },
+        {
+          index: 1,
+          images: [
+            {
+              src: backgroundKamui2,
+              alt: "画像2",
+            },
+            {
+              src: backgroundKamui3,
+              alt: "画像3",
+            },
+            {
+              src: backgroundKamui4,
+              alt: "画像4",
+            },
+          ],
+        },
+      ],
+      rooms: [
+        {
+          image: diningImg,
+          alt: "食卓画像",
+          title: "食卓",
+          description: "皆で集まれる広々スペース",
+        },
+        {
+          image: kitchenImg,
+          alt: "台所画像",
+          title: "台所",
+          description: "炊飯器、電子レンジ、オーブンを備えております",
+        },
+        {
+          image: tokonomaImg,
+          alt: "床の間画像",
+          title: "床の間",
+          description: "近郊のふるびら温泉で至福のひとときを",
+        },
+        {
+          image: bedroomImg,
+          alt: "寝室画像",
+          title: "寝室",
+          description: "静かで落ち着いた空間で、心地よい眠りを提供します",
+        },
+      ],
+      amenities: [
+        "枕カバー",
+        "シーツ",
+        "ハンドタオル",
+        "バスタオル",
+        "ドライヤー",
+        "スリッパ",
+        "ヘアアイロン",
+        "トイレットペーパー",
+        "シャンプー",
+        "コンディショナー",
+        "ボディーソープ",
+        "ハンドソープ",
+        "炊飯器",
+        "電子レンジ",
+        "電気ケトル",
+        "Wi-Fi(約200Mbps)",
+      ],
+    };
   },
 };
 </script>
@@ -110,21 +174,21 @@ export default {
 
 .image-row {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   gap: 0.3%;
   width: 100%;
-  justify-content: space-around;
 }
 
-.image-row:nth-child(1) img {
+.image-row.first-row img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-.image-row:nth-child(2) img {
+
+.image-row.second-row img {
+  width: 33%;
   height: 200px;
   object-fit: cover;
-  width: 33%;
 }
 
 .room-section {
@@ -137,16 +201,16 @@ export default {
   .image-section {
     width: 100%;
   }
-  .image-row:first-child {
+  .image-row.first-row {
     display: none;
   }
-  .image-row:nth-child(2) {
+  .image-row.second-row {
     flex-direction: column;
     gap: 0;
   }
-  .image-row:nth-child(2) img {
-    height: 260px;
+  .image-row.second-row img {
     width: 100%;
+    height: 260px;
   }
   .room-section {
     grid-template-columns: 1fr;
@@ -187,6 +251,7 @@ export default {
 .custom-button {
   font-size: var(--font-size-heading);
 }
+
 @media (max-width: 360px) {
   .amenity-section {
     width: 100%;
