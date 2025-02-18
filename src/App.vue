@@ -92,10 +92,6 @@ section {
   width: 30px;
   height: 30px;
 }
-.logo {
-  width: 300px;
-  margin-bottom: 2rem;
-}
 section {
   display: flex;
   justify-content: center;
@@ -127,7 +123,7 @@ section.kamui {
 
 @media (max-width: 768px) {
   .content {
-    width: 90%;
+    width: 100%;
   }
 }
 </style>
