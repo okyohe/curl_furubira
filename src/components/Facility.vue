@@ -57,13 +57,13 @@
           </div>
         </Card>
       </div>
-      <SmallHeading title-ja="備品" />
+      <SmallHeading title-ja="備品" :title-en="'amenity'" />
       <!-- アメニティセクション -->
       <div class="amenity-section content">
         <p>持ち帰り可能（使い捨て）: 歯ブラシ、歯磨きセット、綿棒</p>
         <p>
           持ち帰り不可（備え付け）:
-          枕カバー、シーツ、ハンドタオル、バスタオル、ドライヤー、スリッパ、ヘアアイロン、トイレットペーパー、シャンプー、コンディショナー、ボディーソープ、ハンドソープ、炊飯器、電子レンジ、オーブン、高速Wi-Fi(STARLINK)
+          枕カバー、シーツ、ハンドタオル、バスタオル、ドライヤー、スリッパ、ヘアアイロン、トイレットペーパー、シャンプー、コンディショナー、ボディーソープ、ハンドソープ、炊飯器、電子レンジ、オーブン、Wi-Fi(約200Mbps)
         </p>
       </div>
 
@@ -186,5 +186,11 @@ export default {
 
 .custom-button {
   font-size: var(--font-size-heading);
+}
+@media (max-width: 360px) {
+  .amenity-section {
+    width: 100%;
+    padding: 0.5rem;
+  }
 }
 </style>

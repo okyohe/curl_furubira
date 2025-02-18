@@ -9,11 +9,7 @@
     </div>
     <div class="action">
       <!-- ご予約ボタン -->
-      <button
-        class="reservation-button bg-[#E3DAC2] text-black py-2 px-4 rounded zen-old-mincho-semibold">
-        ご予約はこちら
-      </button>
-
+      <ReserveButton />
       <!-- ハンバーガーメニュー -->
       <div class="hamburger-menu cursor-pointer" @mouseover="isOpen = true">
         <div :class="['line', isOpen ? 'open-line1' : '']"></div>
@@ -52,9 +48,12 @@
 <script>
 import backgroundImage from "@/assets/images/background_navy.png";
 import logoImage from "@/assets/images/logo.png";
-
+import ReserveButton from "./ui/ReserveButton.vue";
 export default {
   name: "Header",
+  components: {
+    ReserveButton,
+  },
   data() {
     return {
       backgroundImage,

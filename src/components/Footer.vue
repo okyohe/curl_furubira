@@ -10,7 +10,10 @@
             alt="Facebook"
             class="social-logo" />
         </a> -->
-          <a href="#" class="icon">
+          <a
+            href="https://www.instagram.com/curl_furubira/"
+            target="_blank"
+            class="icon">
             <img
               src="@/assets/images/Instagram_logo.png"
               alt="Instagram"
