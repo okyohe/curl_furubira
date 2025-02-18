@@ -70,4 +70,9 @@ export default {
   background-color: #000;
   width: 30%;
 }
+@media (max-width: 768px) {
+  .title-container {
+    margin: 0;
+  }
+}
 </style>
