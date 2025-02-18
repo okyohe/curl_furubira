@@ -22,9 +22,7 @@
         </div>
 
         <div class="right-image">
-          <img
-            src="../assets/images/experience/sightsee.jpg"
-            alt="kamui image" />
+          <img src="../assets/images/experience/snow.jpg" alt="kamui image" />
         </div>
       </div>
     </div>
