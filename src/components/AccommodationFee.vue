@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 section {
-  background-image: url("../assets/images/background_beige.png");
+  background-image: url("../assets/images/logo/background_beige.png");
 }
 .wrapper {
   padding: 2rem;

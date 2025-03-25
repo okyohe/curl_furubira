@@ -3,7 +3,7 @@
     @click="navigateToAirbnb"
     class="reserve-button text-black py-2 px-4 rounded zen-old-mincho-semibold flex items-center gap-2">
     <img
-      src="@/assets/images/airbnb_logo_navy.png"
+      src="@/assets/images/logo/airbnb_logo_navy.png"
       alt="Airbnb Logo"
       class="w-6 h-6" />
     ご予約はAirbnbから

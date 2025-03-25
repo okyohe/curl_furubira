@@ -119,20 +119,19 @@ const timelineItems = ref([
 
 const rowImages = ref([
   {
-    src: new URL("@/assets/images/experience/kaisendon.jpg", import.meta.url)
-      .href,
+    src: new URL("@/assets/images/generated/unidon.jpg", import.meta.url).href,
     alt: "海鮮丼",
   },
   {
-    src: new URL("@/assets/images/experience/sado.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/sado.jpg", import.meta.url).href,
     alt: "茶道",
   },
   {
-    src: new URL("@/assets/images/experience/onsen.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/onsen.jpg", import.meta.url).href,
     alt: "Traditional onsen",
   },
   {
-    src: new URL("@/assets/images/experience/cheers.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/cheers.jpg", import.meta.url).href,
     alt: "Group gathering",
   },
 ]);
@@ -158,22 +157,20 @@ const timelineItemsDay2 = ref([
 
 const rowImagesDay2 = ref([
   {
-    src: new URL("@/assets/images/experience/kamuimisaki.jpg", import.meta.url)
-      .href,
-    alt: "神威岬",
+    src: new URL("@/assets/images/generated/drive.jpg", import.meta.url).href,
+    alt: "ドライブ",
   },
   {
-    src: new URL("@/assets/images/experience/banya.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/bannya.jpg", import.meta.url).href,
     alt: "ヤマシメ番屋",
   },
   {
-    src: new URL("@/assets/images/experience/fruit_park.jpg", import.meta.url)
+    src: new URL("@/assets/images/generated/fruitpark.jpg", import.meta.url)
       .href,
     alt: "Fruit Park",
   },
   {
-    src: new URL("@/assets/images/experience/nikka-min.jpg", import.meta.url)
-      .href,
+    src: new URL("@/assets/images/generated/whiskey.jpg", import.meta.url).href,
     alt: "Nikka Whisky Distillery",
   },
 ]);
@@ -181,7 +178,7 @@ const rowImagesDay2 = ref([
 
 <style scoped>
 section {
-  background-image: url("../assets/images/background_navy.png");
+  background-image: url("../assets/images/logo/background_navy.png");
   color: #e3dac2;
   min-height: 100vh;
   padding: 2rem;
@@ -322,8 +319,16 @@ section {
 
 .image-item {
   object-fit: cover;
+  object-position: center;
   width: 100%;
   height: 12.5rem;
+  transition: transform 0.3s ease;
+  margin: 0.5rem 0;
+}
+
+.image-grid,
+.timeline-item {
+  overflow: hidden;
 }
 
 .mobile-image {
@@ -360,6 +365,8 @@ section {
 
   .mobile-image {
     display: block;
+    width: 100%;
+    height: auto;
   }
 
   .desktop-image {
@@ -375,14 +382,33 @@ section {
   }
 }
 
+@media (min-width: 1001px) {
+  .desktop-image {
+    width: 100%;
+    height: 12.5rem;
+  }
+}
+
 /* 360px以下のスタイルを追加 */
 @media (max-width: 360px) {
   .content-wrapper {
-    border: none; /* borderをnoneに設定 */
+    border: none;
   }
   .content {
-    width: 100vw; /* widthを100vwに設定 */
+    width: 100vw;
     padding: 0.5rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .day-marker {
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>

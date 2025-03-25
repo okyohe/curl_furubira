@@ -4,7 +4,7 @@
       <!-- 画像セクション（縦画像用） -->
       <div class="image-section">
         <img
-          v-for="(image, index) in verticalImages"
+          v-for="(image, index) in facilityImages"
           :key="index"
           :src="image.src"
           :alt="image.alt"
@@ -23,6 +23,16 @@
         </Card>
       </div>
 
+      <!-- サブルーム画像セクション -->
+      <div class="image-section">
+        <img
+          v-for="(image, index) in subroomImages"
+          :key="index"
+          :src="image.src"
+          :alt="image.alt"
+          class="vertical-image" />
+      </div>
+
       <SmallHeading title-ja="備品" :title-en="'amenity'" />
 
       <!-- アメニティセクション -->
@@ -32,11 +42,20 @@
           {{ amenities.join("、") }}
         </p>
       </div>
-
       <!-- CTAセクション -->
       <div class="cta-section content">
         <img :src="logo" alt="ロゴ" class="logo" />
         <ReserveButton />
+      </div>
+
+      <!-- アメニティ画像セクション -->
+      <div class="image-section">
+        <img
+          v-for="(image, index) in amenityImages"
+          :key="index"
+          :src="image.src"
+          :alt="image.alt"
+          class="vertical-image" />
       </div>
     </div>
   </section>
@@ -48,19 +67,24 @@ import { Card } from "@/components/ui/card";
 import ReserveButton from "@/components/ui/ReserveButton.vue";
 
 // 画像のインポート
-import backgroundKamui1 from "@/assets/images/background_kamui.png";
-import backgroundKamui2 from "@/assets/images/background_kamui.png";
-import backgroundKamui3 from "@/assets/images/background_kamui.png";
-import backgroundKamui4 from "@/assets/images/background_kamui.png";
-import diningImg from "@/assets/images/room/dining.jpg";
-import kitchenImg from "@/assets/images/room/kitchen.jpg";
-import tokonomaImg from "@/assets/images/room/tokonoma.jpg";
-import bedroomImg from "@/assets/images/room/bedroom.jpg";
-import boxLogoNavy from "@/assets/images/boxlogo_navy.png";
-import enjoyDinner from "@/assets/images/experience/enjoy_dinner-min.jpg";
-import enjoyDrinking from "@/assets/images/experience/enjoy_drinking-min.jpg";
-import enjoySauna from "@/assets/images/experience/enjoy_sauna-min.jpg";
-import festivalImg from "@/assets/images/experience/festival.jpg";
+import diningImg from "@/assets/images/photos/10_room_dining_stove_side.jpg";
+import kitchenImg from "@/assets/images/photos/16_room_kitchen_close.jpg";
+import tokonomaImg from "@/assets/images/photos/30_room_tokonoma_withdesk_fusumaside.jpg";
+import bedroomImg from "@/assets/images/photos/25_room_bedroom_view.jpg";
+import boxLogoNavy from "@/assets/images/logo/boxlogo_navy.png";
+// amenity images
+import roomDiningStove from "../assets/images/photos/11_room_dining_stove.jpg";
+import roomEntranceFireExtinguisher from "../assets/images/photos/5_room_entrance_fire_extinguisher.jpg";
+import roomBedroomKey from "../assets/images/photos/27_room_bedroom_key.jpg";
+import roomBathroomBath from "../assets/images/photos/40_room_bathroom_bath.jpg";
+import roomBathroomSink from "../assets/images/photos/40_room_bathroom_sink.jpg";
+import roomBathroomTowel from "../assets/images/photos/41_room_bathroom_towel.jpg";
+import roomBathroomWasherDryer from "../assets/images/photos/41_room_bathroom_washerdryer.jpg";
+import roomToiletPull from "../assets/images/photos/50_room_toilet_pull.jpg";
+import entranceImg from "@/assets/images/photos/5_room_entrance.jpg";
+import diningWifiPanelImg from "@/assets/images/photos/12_room_dining_wifipanel.jpg";
+import diningFrameImg from "@/assets/images/photos/12_room_dining_frame.jpg";
+import entranceSlippersImg from "@/assets/images/photos/5_room_entrance_slippers.jpg";
 
 export default {
   name: "Facility",
@@ -74,22 +98,58 @@ export default {
       // ロゴ画像の定義
       logo: boxLogoNavy,
       // 縦画像として表示するための画像リスト
-      verticalImages: [
+      facilityImages: [
         {
-          src: festivalImg,
-          alt: "夏祭り",
+          src: roomDiningStove,
+          alt: "ダイニングストーブ",
         },
         {
-          src: enjoySauna,
-          alt: "サウナを楽しむ",
+          src: diningWifiPanelImg,
+          alt: "ダイニングのWiFiパネル",
         },
         {
-          src: enjoyDrinking,
-          alt: "飲み会を楽しむ",
+          src: diningFrameImg,
+          alt: "ダイニングのフレーム",
         },
         {
-          src: enjoyDinner,
-          alt: "ディナーを楽しむ",
+          src: roomBathroomBath,
+          alt: "バスルームのバス",
+        },
+      ],
+      subroomImages: [
+        {
+          src: entranceImg,
+          alt: "入口",
+        },
+        {
+          src: roomEntranceFireExtinguisher,
+          alt: "入口の消火器",
+        },
+        {
+          src: roomBedroomKey,
+          alt: "寝室の鍵",
+        },
+        {
+          src: entranceSlippersImg,
+          alt: "入口のスリッパ",
+        },
+      ],
+      amenityImages: [
+        {
+          src: roomBathroomSink,
+          alt: "バスルームのシンク",
+        },
+        {
+          src: roomBathroomTowel,
+          alt: "バスルームのタオル",
+        },
+        {
+          src: roomBathroomWasherDryer,
+          alt: "バスルームの洗濯乾燥機",
+        },
+        {
+          src: roomToiletPull,
+          alt: "トイレのプル",
         },
       ],
       rooms: [
@@ -143,7 +203,8 @@ export default {
 
 <style scoped>
 section {
-  background-image: url("../assets/images/background_beige.png");
+  background-image: url("../assets/images/logo/background_beige.png");
+  padding: 0;
 }
 .facility {
   display: flex;
@@ -157,6 +218,13 @@ section {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
+  margin: 5rem 0;
+}
+.image-section:nth-of-type(1) {
+  margin: 0 0 5rem 0;
+}
+div:nth-of-type(8) {
+  margin: 5rem 0 0 0;
 }
 
 .vertical-image {

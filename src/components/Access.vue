@@ -15,7 +15,7 @@
       <div class="logo-container">
         <img
           class="logo"
-          src="../assets/images/boxlogo_navy.png"
+          src="../assets/images/logo/boxlogo_navy.png"
           alt="Curl Furubira logo" />
         <p>駐車場完備（2台）</p>
         <p>〒046-0102 北海道古平郡古平町丸山町103</p>
@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 section {
-  background-image: url("@/assets/images/background_kamui.png");
+  background-image: url("@/assets/images/logo/background_kamui.png");
   background-size: cover;
   background-position: center;
 }

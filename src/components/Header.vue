@@ -48,8 +48,8 @@
 </template>
 
 <script>
-import backgroundImage from "@/assets/images/background_navy.png";
-import logoImage from "@/assets/images/logo.png";
+import backgroundImage from "@/assets/images/logo/background_navy.png";
+import logoImage from "@/assets/images/logo/logo.png";
 import ReserveButton from "./ui/ReserveButton.vue";
 export default {
   name: "Header",
@@ -135,7 +135,7 @@ export default {
   width: 200px;
   border-radius: 4px;
   z-index: 10;
-  background-image: url("../assets/images/background_beige.png");
+  background-image: url("../assets/images/logo/background_beige.png");
   font-family: "Zen Old Mincho", serif;
   font-weight: 600;
   font-style: normal;
@@ -176,7 +176,7 @@ export default {
 }
 
 /* 360px以下の画面幅でheaderのボタンを非表示にする */
-@media (max-width: 360px) {
+@media (max-width: 450px) {
   .reserve {
     display: none;
   }

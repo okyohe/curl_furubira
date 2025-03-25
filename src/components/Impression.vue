@@ -8,7 +8,9 @@
           <p>田舎没入型民泊「カールふるびら」</p>
         </div>
         <div class="left-image">
-          <img src="../assets/images/room/house_summer.jpg" alt="kamui image" />
+          <img
+            src="../assets/images/photos/1_front_view.jpg"
+            alt="kamui image" />
         </div>
       </div>
       <div class="vertical-divider">
@@ -22,7 +24,9 @@
         </div>
 
         <div class="right-image">
-          <img src="../assets/images/experience/snow.jpg" alt="kamui image" />
+          <img
+            src="../assets/images/photos/500_yohei_watanabe_2.jpg"
+            alt="kamui image" />
         </div>
       </div>
     </div>
@@ -37,7 +41,9 @@
       </div>
 
       <div class="logo">
-        <img src="../assets/images/boxlogo_navy.png" alt="Curl Furubira logo" />
+        <img
+          src="../assets/images/logo/boxlogo_navy.png"
+          alt="Curl Furubira logo" />
       </div>
 
       <!-- <div class="cta-button">
@@ -46,7 +52,9 @@
 
       <div class="social-links">
         <a href="https://www.instagram.com/curl_furubira/" target="_blank">
-          <img src="../assets/images/Instagram_logo_navy.png" alt="Instagram" />
+          <img
+            src="../assets/images/logo/Instagram_logo_navy.png"
+            alt="Instagram" />
         </a>
       </div>
     </div>
@@ -55,7 +63,7 @@
 
 <style scoped>
 section {
-  background-image: url("../assets/images/background_beige.png");
+  background-image: url("../assets/images/logo/background_beige.png");
   background-repeat: repeat;
   background-size: auto;
   display: flex;

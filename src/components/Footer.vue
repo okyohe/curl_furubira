@@ -15,7 +15,7 @@
             target="_blank"
             class="icon">
             <img
-              src="@/assets/images/Instagram_logo.png"
+              src="@/assets/images/logo/Instagram_logo.png"
               alt="Instagram"
               class="social-logo" />
           </a>
@@ -23,7 +23,7 @@
       </div>
       <div class="description">
         <img
-          src="@/assets/images/boxlogo_white.png"
+          src="@/assets/images/logo/boxlogo_white.png"
           alt="カールふるびら"
           class="logo" />
         <div class="text">
@@ -47,7 +47,7 @@ export default {
 
 <style scoped>
 .Footer {
-  background-image: url("../assets/images/background_navy.png");
+  background-image: url("../assets/images/logo/background_navy.png");
   color: #fff;
   padding: 2rem;
   padding-bottom: 4rem;
