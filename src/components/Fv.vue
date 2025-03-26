@@ -210,6 +210,11 @@ watch(currentIndex, () => {
     margin: 0;
     text-align: center;
   }
+
+  .scroll-indicator {
+    transform: translateX(-50%) translateY(0);
+    bottom: 40px;
+  }
 }
 
 .white-overlay {
@@ -237,13 +242,29 @@ watch(currentIndex, () => {
   z-index: 3;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
-  width: 50px; /* 正円にするための幅 */
-  height: 50px; /* 正円にするための高さ */
+  width: 50px;
+  height: 50px;
   display: flex;
-  flex-direction: column; /* 縦に並べる */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: bounce 2s infinite; /* 全体にアニメーションを適用 */
+}
+
+/* アニメーション用の疑似要素を追加 */
+.scroll-indicator::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: bounce 2s infinite;
+}
+
+.arrow,
+.scroll-text {
+  position: relative;
+  z-index: 1;
 }
 
 .arrow {
