@@ -1,7 +1,7 @@
 <template>
   <button
     @click="navigateToAirbnb"
-    class="reserve-button text-black py-2 px-4 rounded zen-old-mincho-semibold flex items-center gap-2">
+    class="reserve-button text-black py-2 px-4 rounded flex items-center gap-2">
     <img
       src="@/assets/images/logo/airbnb_logo_navy.png"
       alt="Airbnb Logo"
@@ -34,6 +34,7 @@ export default {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: "Zen Old Mincho", serif;
 }
 
 .reserve-button::before {
