@@ -136,19 +136,18 @@ watch(currentIndex, () => {
 }
 
 .vertical-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+  position: absolute;
+  right: 10%;
+  top: 40%;
+  transform: translateY(-30%);
+  writing-mode: vertical-rl;
+  text-align: left;
 }
 
 .vertical-text h2 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: flex-start;
 }
 
 .vertical-text span {
@@ -195,9 +194,16 @@ watch(currentIndex, () => {
     width: 70%;
   }
   .vertical-text {
+    position: static; /* Override absolute positioning */
+    right: auto; /* Reset */
+    top: auto; /* Reset */
+    transform: none; /* Override transform */
+    writing-mode: horizontal-tb; /* Override writing mode */
+    text-align: center; /* Override text align */
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px; /* Space from logo */
   }
   .vertical-text h2 {
     display: flex;
@@ -207,12 +213,14 @@ watch(currentIndex, () => {
   }
 
   .vertical-text .highlight {
-    background-color: rgba(255, 255, 255, 0);
-    writing-mode: horizontal-tb;
-    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0); /* Transparent BG */
+    writing-mode: horizontal-tb; /* Ensure horizontal */
+    margin: 5px 0; /* Vertical margin between highlights */
     text-align: center;
     padding: 5px 10px;
     color: white;
+    letter-spacing: normal; /* Reset from PC style */
+    white-space: normal; /* Allow text wrapping, reset from PC style */
   }
 
   .scroll-indicator {
