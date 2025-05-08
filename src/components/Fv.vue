@@ -136,18 +136,19 @@ watch(currentIndex, () => {
 }
 
 .vertical-text {
-  position: absolute;
-  right: 10%;
-  top: 40%;
-  transform: translateY(-30%);
-  writing-mode: vertical-rl;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .vertical-text h2 {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .vertical-text span {
@@ -194,21 +195,24 @@ watch(currentIndex, () => {
     width: 70%;
   }
   .vertical-text {
-    position: relative;
-    top: 0;
     display: flex;
-    display: none;
+    flex-direction: column;
+    align-items: center;
   }
   .vertical-text h2 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .vertical-text .highlight {
     background-color: rgba(255, 255, 255, 0);
     writing-mode: horizontal-tb;
-    margin: 0;
+    margin: 0 5px;
     text-align: center;
+    padding: 5px 10px;
+    color: white;
   }
 
   .scroll-indicator {
