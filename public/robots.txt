@@ -1,2 +1,3 @@
 User-agent: *
-Allow: /ssr/
+Allow: /
+Sitemap: https://curl-furubira.com/sitemap.xml
