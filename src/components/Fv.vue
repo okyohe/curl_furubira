@@ -8,10 +8,10 @@
     <div class="overlay">
       <img :src="getLogoSrc('boxlogo_white.png')" class="logo" alt="ロゴ" />
       <div class="vertical-text">
-        <h2>
-          <span class="highlight">自然に囲まれた</span>
-          <span class="highlight">あなたの充電スポット</span>
-        </h2>
+        <h1>
+          <span class="highlight">カールふるびら</span>
+          <span class="highlight">北海道古平町の田舎体験宿</span>
+        </h1>
       </div>
     </div>
     <div
@@ -144,7 +144,7 @@ watch(currentIndex, () => {
   text-align: left;
 }
 
-.vertical-text h2 {
+.vertical-text h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -205,7 +205,7 @@ watch(currentIndex, () => {
     align-items: center;
     margin-top: 20px; /* Space from logo */
   }
-  .vertical-text h2 {
+  .vertical-text h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
