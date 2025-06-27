@@ -67,24 +67,24 @@ import { Card } from "@/components/ui/card";
 import ReserveButton from "@/components/ui/ReserveButton.vue";
 
 // 画像のインポート
-import diningImg from "@/assets/images/photos/10_room_dining_stove_side.jpg";
-import kitchenImg from "@/assets/images/photos/16_room_kitchen_close.jpg";
-import tokonomaImg from "@/assets/images/photos/30_room_tokonoma_withdesk_fusumaside.jpg";
-import bedroomImg from "@/assets/images/photos/25_room_bedroom_view.jpg";
+import diningImg from "@/assets/images/photos/10_room_dining_stove_side.webp";
+import kitchenImg from "@/assets/images/photos/16_room_kitchen_close.webp";
+import tokonomaImg from "@/assets/images/photos/30_room_tokonoma_withdesk_fusumaside.webp";
+import bedroomImg from "@/assets/images/photos/25_room_bedroom_view.webp";
 import boxLogoNavy from "@/assets/images/logo/boxlogo_navy.png";
 // amenity images
-import roomDiningStove from "../assets/images/photos/11_room_dining_stove.jpg";
-import roomEntranceFireExtinguisher from "../assets/images/photos/5_room_entrance_fire_extinguisher.jpg";
-import roomBedroomKey from "../assets/images/photos/27_room_bedroom_key.jpg";
-import roomBathroomBath from "../assets/images/photos/40_room_bathroom_bath.jpg";
-import roomBathroomSink from "../assets/images/photos/40_room_bathroom_sink.jpg";
-import roomBathroomTowel from "../assets/images/photos/41_room_bathroom_towel.jpg";
-import roomBathroomWasherDryer from "../assets/images/photos/41_room_bathroom_washerdryer.jpg";
-import roomToiletPull from "../assets/images/photos/50_room_toilet_pull.jpg";
-import entranceImg from "@/assets/images/photos/5_room_entrance.jpg";
-import diningWifiPanelImg from "@/assets/images/photos/12_room_dining_wifipanel.jpg";
-import diningFrameImg from "@/assets/images/photos/12_room_dining_frame.jpg";
-import entranceSlippersImg from "@/assets/images/photos/5_room_entrance_slippers.jpg";
+import roomDiningStove from "../assets/images/photos/11_room_dining_stove.webp";
+import roomEntranceFireExtinguisher from "../assets/images/photos/5_room_entrance_fire_extinguisher.webp";
+import roomBedroomKey from "../assets/images/photos/27_room_bedroom_key.webp";
+import roomBathroomBath from "../assets/images/photos/40_room_bathroom_bath.webp";
+import roomBathroomSink from "../assets/images/photos/40_room_bathroom_sink.webp";
+import roomBathroomTowel from "../assets/images/photos/41_room_bathroom_towel.webp";
+import roomBathroomWasherDryer from "../assets/images/photos/41_room_bathroom_washerdryer.webp";
+import roomToiletPull from "../assets/images/photos/50_room_toilet_pull.webp";
+import entranceImg from "@/assets/images/photos/5_room_entrance.webp";
+import diningWifiPanelImg from "@/assets/images/photos/12_room_dining_wifipanel.webp";
+import diningFrameImg from "@/assets/images/photos/12_room_dining_frame.webp";
+import entranceSlippersImg from "@/assets/images/photos/5_room_entrance_slippers.webp";
 
 export default {
   name: "Facility",

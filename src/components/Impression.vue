@@ -9,7 +9,7 @@
         </div>
         <div class="left-image">
           <img
-            src="../assets/images/photos/1_front_view.jpg"
+            src="../assets/images/photos/1_front_view.webp"
             alt="kamui image" />
         </div>
       </div>
@@ -25,7 +25,7 @@
 
         <div class="right-image">
           <img
-            src="../assets/images/photos/500_yohei_watanabe_2.jpg"
+            src="../assets/images/photos/500_yohei_watanabe_2.webp"
             alt="kamui image" />
         </div>
       </div>

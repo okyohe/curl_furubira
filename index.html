@@ -37,17 +37,27 @@
     <title>カールふるびら｜北海道古平町の田舎体験宿</title>
     <script type="module" src="/src/entry.js"></script>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-8RRB49Q5BX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+      let gtagLoaded = false;
+      function loadGtag() {
+        if (gtagLoaded) return;
+        gtagLoaded = true;
+        var script = document.createElement("script");
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-8RRB49Q5BX";
+        script.async = true;
+        document.head.appendChild(script);
 
-      gtag("config", "G-8RRB49Q5BX");
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+        gtag("js", new Date());
+        gtag("config", "G-8RRB49Q5BX");
+      }
+
+      // 例：最初のスクロールで読み込む
+      window.addEventListener("scroll", loadGtag, { once: true });
     </script>
 
     <!-- ファビコンを設定 -->

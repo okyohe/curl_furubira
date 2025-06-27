@@ -36,9 +36,9 @@ function getLogoSrc(fileName) {
 
 // アーティスティック画像のリスト
 const images = [
-  getPhotoSrc("0_100_white_pillow.jpg"),
-  getPhotoSrc("0_101_dining.jpg"),
-  getPhotoSrc("0_103_navypillow.jpg"),
+  getPhotoSrc("0_100_white_pillow.webp"),
+  getPhotoSrc("0_101_dining.webp"),
+  getPhotoSrc("0_103_navypillow.webp"),
 ];
 
 const currentIndex = ref(0);
