@@ -9,7 +9,7 @@
         </div>
         <div class="left-image">
           <img
-            src="../assets/images/photos/1_front_view.webp"
+            src="../assets/images/photos/1_front_view.jpg"
             alt="kamui image" />
         </div>
       </div>
@@ -25,7 +25,7 @@
 
         <div class="right-image">
           <img
-            src="../assets/images/photos/500_yohei_watanabe_2.webp"
+            src="../assets/images/photos/500_yohei_watanabe_2.jpg"
             alt="kamui image" />
         </div>
       </div>
@@ -47,8 +47,7 @@
       </div>
 
       <!-- <div class="cta-button">
-        <button>宿について詳しく知る</button>
-      </div> -->
+        <button>宿について詳しく知る<boxlogo_navy.png/div> -->
 
       <div class="social-links">
         <a href="https://www.instagram.com/curl_furubira/" target="_blank">
@@ -65,8 +64,7 @@
 section {
   background-image: url("../assets/images/logo/background_beige.png");
   background-repeat: repeat;
-  background-size: auto;
-  display: flex;
+  background-si: flex;
   flex-direction: column;
   align-items: center;
 }

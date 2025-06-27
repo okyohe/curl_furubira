@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 section {
-  background-image: url("@/assets/images/logo/background_kamui.png");
+  background-image: url("@/assets/images/logo/background_kamui.webp");
   background-size: cover;
   background-position: center;
 }

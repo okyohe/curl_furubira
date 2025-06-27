@@ -198,12 +198,21 @@ export default {
       ],
     };
   },
+  computed: {
+    logo() {
+      if (document.documentElement.classList.contains("webp")) {
+        return boxLogoNavyWebp;
+      } else {
+        return boxLogoNavy;
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
 section {
-  background-image: url("../assets/images/logo/background_beige.png");
+  background-image: url("../assets/images/logo/background_beige.webp");
   padding: 0;
 }
 .facility {
