@@ -6,20 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [
-      {
-        "source": "/**",
-        "destination": "https://curl-furubira.com/:1",
-        "type": 301,
-        "condition": "hosts.startsWith('www.')"
-      },
-      {
-        "source": "/**",
-        "destination": "https://curl-furubira.com/:1",
-        "type": 301,
-        "condition": "!hosts.isHttps && !hosts.startsWith('www.')"
-      }
-    ],
     "rewrites": [
       {
         "source": "**",
