@@ -119,19 +119,19 @@ const timelineItems = ref([
 
 const rowImages = ref([
   {
-    src: new URL("@/assets/images/generated/unidon.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/unidon.webp", import.meta.url).href,
     alt: "海鮮丼",
   },
   {
-    src: new URL("@/assets/images/generated/sado.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/sado.webp", import.meta.url).href,
     alt: "茶道",
   },
   {
-    src: new URL("@/assets/images/generated/onsen.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/onsen.webp", import.meta.url).href,
     alt: "Traditional onsen",
   },
   {
-    src: new URL("@/assets/images/generated/cheers.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/cheers.webp", import.meta.url).href,
     alt: "Group gathering",
   },
 ]);
@@ -157,20 +157,21 @@ const timelineItemsDay2 = ref([
 
 const rowImagesDay2 = ref([
   {
-    src: new URL("@/assets/images/generated/drive.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/drive.webp", import.meta.url).href,
     alt: "ドライブ",
   },
   {
-    src: new URL("@/assets/images/generated/bannya.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/bannya.webp", import.meta.url).href,
     alt: "ヤマシメ番屋",
   },
   {
-    src: new URL("@/assets/images/generated/fruitpark.jpg", import.meta.url)
+    src: new URL("@/assets/images/generated/fruitpark.webp", import.meta.url)
       .href,
     alt: "Fruit Park",
   },
   {
-    src: new URL("@/assets/images/generated/whiskey.jpg", import.meta.url).href,
+    src: new URL("@/assets/images/generated/whiskey.webp", import.meta.url)
+      .href,
     alt: "Nikka Whisky Distillery",
   },
 ]);
@@ -178,7 +179,7 @@ const rowImagesDay2 = ref([
 
 <style scoped>
 section {
-  background-image: url("../assets/images/logo/background_navy.png");
+  background-image: url("../assets/images/logo/background_navy.webp");
   color: #e3dac2;
   min-height: 100vh;
   padding: 2rem;
@@ -186,6 +187,12 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  section {
+    background-image: url("../assets/images/logo/background_navy-mobile.webp");
+  }
 }
 
 .content-wrapper {

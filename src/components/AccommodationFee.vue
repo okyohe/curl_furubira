@@ -23,7 +23,12 @@ export default {
 
 <style scoped>
 section {
-  background-image: url("../assets/images/logo/background_beige.png");
+  background-image: url("../assets/images/logo/background_beige.webp");
+}
+@media (max-width: 768px) {
+  section {
+    background-image: url("../assets/images/logo/background_beige-mobile.webp");
+  }
 }
 .wrapper {
   padding: 2rem;

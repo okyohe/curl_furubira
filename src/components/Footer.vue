@@ -47,11 +47,17 @@ export default {
 
 <style scoped>
 .Footer {
-  background-image: url("../assets/images/logo/background_navy.png");
+  background-image: url("../assets/images/logo/background_navy.webp");
   color: #fff;
   padding: 2rem;
   padding-bottom: 4rem;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .Footer {
+    background-image: url("../assets/images/logo/background_navy-mobile.webp");
+  }
 }
 
 .info-container {

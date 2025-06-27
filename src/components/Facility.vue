@@ -198,15 +198,6 @@ export default {
       ],
     };
   },
-  computed: {
-    logo() {
-      if (document.documentElement.classList.contains("webp")) {
-        return boxLogoNavyWebp;
-      } else {
-        return boxLogoNavy;
-      }
-    },
-  },
 };
 </script>
 
@@ -248,16 +239,6 @@ div:nth-of-type(8) {
   gap: 1rem;
 }
 
-@media (max-width: 768px) {
-  /* スマホ・タブレットでは2列×2段のグリッド表示 */
-  .image-section {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .room-section {
-    grid-template-columns: 1fr;
-  }
-}
-
 .room-image {
   width: 100%;
   height: auto;
@@ -291,6 +272,19 @@ div:nth-of-type(8) {
 
 .custom-button {
   font-size: var(--font-size-heading);
+}
+
+@media (max-width: 768px) {
+  section {
+    background-image: url("../assets/images/logo/background_beige-mobile.webp");
+  }
+  /* スマホ・タブレットでは2列×2段のグリッド表示 */
+  .image-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .room-section {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 360px) {

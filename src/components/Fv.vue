@@ -2,8 +2,8 @@
   <div class="Fv" @click="nextImage">
     <div class="white-overlay" :class="{ 'fade-active': isFading }"></div>
     <picture>
-      <source :srcset="currentImage" media="(max-width: 768px)" />
-      <img :src="currentImage" class="background" alt="背景画像" />
+      <source :srcset="currentImage.mobile" media="(max-width: 768px)" />
+      <img :src="currentImage.desktop" class="background" alt="背景画像" />
     </picture>
     <div class="overlay">
       <img :src="getLogoSrc('boxlogo_white.png')" class="logo" alt="ロゴ" />
@@ -36,9 +36,18 @@ function getLogoSrc(fileName) {
 
 // アーティスティック画像のリスト
 const images = [
-  getPhotoSrc("0_100_white_pillow.webp"),
-  getPhotoSrc("0_101_dining.webp"),
-  getPhotoSrc("0_103_navypillow.webp"),
+  {
+    desktop: getPhotoSrc("0_100_white_pillow.webp"),
+    mobile: getPhotoSrc("0_100_white_pillow-mobile.webp"),
+  },
+  {
+    desktop: getPhotoSrc("0_101_dining.webp"),
+    mobile: getPhotoSrc("0_101_dining-mobile.webp"),
+  },
+  {
+    desktop: getPhotoSrc("0_103_navypillow.webp"),
+    mobile: getPhotoSrc("0_103_navypillow-mobile.webp"),
+  },
 ];
 
 const currentIndex = ref(0);
@@ -98,8 +107,6 @@ watch(currentIndex, () => {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600&display=swap");
-
 .Fv {
   position: relative;
   height: 100vh; /* ヘッダーの高さを指定してください */

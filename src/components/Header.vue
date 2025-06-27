@@ -1,7 +1,6 @@
 ﻿<template>
   <header
     class="Header flex items-center justify-between bg-cover"
-    :style="{ backgroundImage: `url(${backgroundImage})` }"
     @mouseleave="isOpen = false">
     <!-- ロゴ -->
     <div class="header-logo">
@@ -48,7 +47,6 @@
 </template>
 
 <script>
-import backgroundImage from "@/assets/images/logo/background_navy.png";
 import logoImage from "@/assets/images/logo/logo.png";
 import ReserveButton from "./ui/ReserveButton.vue";
 export default {
@@ -58,7 +56,6 @@ export default {
   },
   data() {
     return {
-      backgroundImage,
       logoImage,
       isOpen: false, // ハンバーガーメニューの開閉状態
     };
@@ -91,6 +88,7 @@ export default {
   padding: 0 16px;
   font-size: var(--font-size-heading);
   z-index: 1000; /* 他の要素の上に表示 */
+  background-image: url("@/assets/images/logo/background_navy.webp");
 }
 
 /* ロゴ */
@@ -135,7 +133,7 @@ export default {
   width: 200px;
   border-radius: 4px;
   z-index: 10;
-  background-image: url("../assets/images/logo/background_beige.png");
+  background-image: url("@/assets/images/logo/background_beige.webp");
   font-family: "Zen Old Mincho", serif;
   font-weight: 600;
   font-style: normal;
@@ -148,10 +146,14 @@ export default {
 @media (max-width: 768px) {
   .Header {
     height: 68px;
+    background-image: url("@/assets/images/logo/background_navy-mobile.webp");
   }
 
   .logo-image {
     height: 60px;
+  }
+  .mobile-menu {
+    background-image: url("@/assets/images/logo/background_beige-mobile.webp");
   }
 
   .hamburger-menu .line {

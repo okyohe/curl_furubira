@@ -62,9 +62,9 @@
 
 <style scoped>
 section {
-  background-image: url("../assets/images/logo/background_beige.png");
+  background-image: url("../assets/images/logo/background_beige.webp");
   background-repeat: repeat;
-  background-si: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -171,6 +171,9 @@ section {
 }
 
 @media (max-width: 768px) {
+  section {
+    background-image: url("../assets/images/logo/background_beige-mobile.webp");
+  }
   .first-content {
     flex-direction: column;
   }
