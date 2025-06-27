@@ -4,7 +4,7 @@ import os
 # 1. 対象画像ファイル名リスト
 image_files = [
     "background_navy.png",
-    "background_beige.png",
+    "background_beige.webp",
     "background_kamui.png",
 ]
 
