@@ -10,7 +10,7 @@
         <div class="left-image">
           <img
             src="../assets/images/photos/1_front_view.jpg"
-            alt="kamui image" />
+            alt="カールふるびら正面玄関" />
         </div>
       </div>
       <div class="vertical-divider">
@@ -26,7 +26,7 @@
         <div class="right-image">
           <img
             src="../assets/images/photos/500_yohei_watanabe_2.jpg"
-            alt="kamui image" />
+            alt="カールふるびらホスト渡辺洋平" />
         </div>
       </div>
     </div>

@@ -71,6 +71,12 @@ section {
   background-position: center;
 }
 
+@media screen and (max-width: 768px) {
+  section {
+    background-image: url("@/assets/images/logo/background_kamui-mobile.webp");
+  }
+}
+
 .info-container {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem;
