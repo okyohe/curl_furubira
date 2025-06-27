@@ -6,7 +6,7 @@
       <img :src="currentImage.desktop" class="background" alt="背景画像" />
     </picture>
     <div class="overlay">
-      <img :src="getLogoSrc('boxlogo_white.png')" class="logo" alt="ロゴ" />
+      <img :src="boxlogo_white" class="logo" alt="ロゴ" />
       <div class="vertical-text">
         <h1>
           <span class="highlight">カールふるびら</span>
@@ -26,27 +26,27 @@
 <script setup>
 import { ref, watch, onMounted, onUnmounted } from "vue";
 
-// getPhotoSrc関数をコンポーネント内で定義
-function getPhotoSrc(fileName) {
-  return new URL(`../assets/images/photos/${fileName}`, import.meta.url).href;
-}
-function getLogoSrc(fileName) {
-  return new URL(`../assets/images/logo/${fileName}`, import.meta.url).href;
-}
+import boxlogo_white from "../assets/images/logo/boxlogo_white.png";
+import pillow_desktop from "../assets/images/photos/0_100_white_pillow.webp";
+import pillow_mobile from "../assets/images/photos/0_100_white_pillow-mobile.jpg";
+import dining_desktop from "../assets/images/photos/0_101_dining.webp";
+import dining_mobile from "../assets/images/photos/0_101_dining-mobile.jpg";
+import navypillow_desktop from "../assets/images/photos/0_103_navypillow.webp";
+import navypillow_mobile from "../assets/images/photos/0_103_navypillow-mobile.jpg";
 
 // アーティスティック画像のリスト
 const images = [
   {
-    desktop: getPhotoSrc("0_100_white_pillow.webp"),
-    mobile: getPhotoSrc("0_100_white_pillow-mobile.webp"),
+    desktop: pillow_desktop,
+    mobile: pillow_mobile,
   },
   {
-    desktop: getPhotoSrc("0_101_dining.webp"),
-    mobile: getPhotoSrc("0_101_dining-mobile.webp"),
+    desktop: dining_desktop,
+    mobile: dining_mobile,
   },
   {
-    desktop: getPhotoSrc("0_103_navypillow.webp"),
-    mobile: getPhotoSrc("0_103_navypillow-mobile.webp"),
+    desktop: navypillow_desktop,
+    mobile: navypillow_mobile,
   },
 ];
 
