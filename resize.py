@@ -11,7 +11,7 @@ image_files = [
 # 2. 元画像のディレクトリ
 input_dir = r"C:\Users\yhwca\WorkSpace\古平町\curl_furubira_vue\src\assets\images\logo"
 
-# 3. 横幅400pxでリサイズし、_400px付きで保存
+# 3. 横幅400pxでリサイズし、元ファイル名で上書き保存
 # PIL.ImageのLANCZOSはバージョンによってはImage.Resampling.LANCZOS
 try:
     resample = Image.Resampling.LANCZOS
@@ -22,8 +22,7 @@ target_width = 400
 
 for filename in image_files:
     input_path = os.path.join(input_dir, filename)
-    base, ext = os.path.splitext(filename)
-    output_path = os.path.join(input_dir, f"{base}_400px{ext}")
+    output_path = input_path  # 上書き保存
     if not os.path.exists(input_path):
         print(f"ファイルが見つかりません: {input_path}")
         continue
