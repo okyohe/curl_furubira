@@ -1,57 +1,64 @@
 import os
 from PIL import Image
+import sys
 
-def create_mobile_versions():
-    # 画像が格納されているディレクトリ
-    input_dir = "src/assets/images/logo/"
-    
-    # 対象の画像ファイル
-    target_files = ["background_beige.webp", "background_navy.webp"]
-    
-    # Pillowがインストールされているか確認
-    try:
-        from PIL import Image
-    except ImportError:
-        print("Pillowがインストールされていません。")
-        print("pip install Pillow を実行してください。")
-        return
+def resize_images_to_webp(input_dir, output_dir, target_width=400, quality=80):
+    """
+    指定されたディレクトリ内の画像をリサイズし、WebP形式で保存する。
 
-    print("モバイル版画像の作成を開始します...")
-    for image_file in target_files:
-        try:
-            # 入力ファイルパス
-            input_path = os.path.join(input_dir, image_file)
-            
-            # 画像を開く
-            with Image.open(input_path) as img:
-                # 元の画像サイズ
-                width, height = img.size
-                
-                # 新しい幅を計算 (元の1/10)
-                new_width = width // 10
-                
-                # アスペクト比を維持した新しい高さを計算
-                new_height = int(new_width * (height / width))
-                
-                # 画像をリサイズ
-                resized_img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
-                
-                # 出力ファイルパスを作成
-                file_name, file_ext = os.path.splitext(image_file)
-                output_filename = f"{file_name}-mobile{file_ext}"
-                output_path = os.path.join(input_dir, output_filename)
-                
-                # 画像を保存
-                resized_img.save(output_path, 'WEBP')
-                
-                print(f"'{output_path}' を幅{new_width}pxで作成しました。")
+    :param input_dir: 入力画像のディレクトリ
+    :param output_dir: 出力画像のディレクトリ
+    :param target_width: リサイズ後の幅 (px)
+    :param quality: WebPの品質 (0-100)
+    """
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+        print(f"作成されたディレクトリ: {output_dir}")
 
-        except FileNotFoundError:
-            print(f"エラー: ファイル '{input_path}' が見つかりませんでした。")
-        except Exception as e:
-            print(f"'{image_file}' の処理中にエラーが発生しました: {e}")
-    print("画像の処理が完了しました。")
+    # 対応する拡張子
+    supported_formats = ['.jpg', '.jpeg', '.png']
 
+    for filename in os.listdir(input_dir):
+        file_path = os.path.join(input_dir, filename)
+        if os.path.isfile(file_path):
+            ext = os.path.splitext(filename)[1].lower()
+            if ext in supported_formats:
+                try:
+                    with Image.open(file_path) as img:
+                        # アルファチャンネルを持つかチェック
+                        has_alpha = img.mode in ('RGBA', 'LA', 'P')
+                        
+                        # アスペクト比を維持してリサイズ
+                        width, height = img.size
+                        aspect_ratio = height / width
+                        new_height = int(target_width * aspect_ratio)
+                        
+                        resized_img = img.resize((target_width, new_height), Image.Resampling.LANCZOS)
+
+                        # 新しいファイル名 (拡張子を .webp に変更)
+                        base_filename = os.path.splitext(filename)[0]
+                        new_filename = f"{base_filename}.webp"
+                        output_path = os.path.join(output_dir, new_filename)
+
+                        # WebPで保存
+                        resized_img.save(output_path, 'WEBP', quality=quality, lossless=False, method=6)
+                        
+                        print(f"変換完了: {file_path} -> {output_path}")
+
+                except Exception as e:
+                    print(f"エラー: {filename} の処理中にエラーが発生しました: {e}", file=sys.stderr)
 
 if __name__ == "__main__":
-    create_mobile_versions() 
+    # photosディレクトリの画像をリサイズ
+    input_photos_dir = "src/assets/images/photos"
+    output_photos_dir = "src/assets/images/photos" 
+    print(f"\n'{input_photos_dir}' 内の画像を処理中...")
+    resize_images_to_webp(input_photos_dir, output_photos_dir)
+
+    # logoディレクトリの画像をリサイズ
+    input_logo_dir = "src/assets/images/logo"
+    output_logo_dir = "src/assets/images/logo"
+    print(f"\n'{input_logo_dir}' 内の画像を処理中...")
+    resize_images_to_webp(input_logo_dir, output_logo_dir)
+
+    print("\nすべての画像の処理が完了しました。") 
