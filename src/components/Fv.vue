@@ -11,7 +11,11 @@
         decoding="async" />
     </picture>
     <div class="overlay">
-      <img src="/boxlogo_white.webp" class="logo" alt="ロゴ" />
+      <img
+        src="/boxlogo_white.webp"
+        class="logo"
+        alt="ロゴ"
+        fetchpriority="high" />
       <div class="vertical-text">
         <h1>
           <span class="highlight">カールふるびら</span>
