@@ -109,7 +109,7 @@ watch(currentIndex, () => {
 <style scoped>
 .Fv {
   position: relative;
-  height: 100vh; /* ヘッダーの高さを指定してください */
+  height: calc(100vh - 68px);
   overflow: hidden;
 }
 
