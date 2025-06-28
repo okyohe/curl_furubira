@@ -114,7 +114,7 @@ watch(currentIndex, () => {
 <style scoped>
 .Fv {
   position: relative;
-  height: calc(100vh - 68px);
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -193,9 +193,6 @@ watch(currentIndex, () => {
 }
 
 @media (max-width: 768px) {
-  .Fv {
-    height: calc(100vh - 68px);
-  }
   .overlay {
     display: flex;
     flex-direction: column;
