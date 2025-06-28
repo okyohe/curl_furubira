@@ -59,4 +59,22 @@ if __name__ == "__main__":
         mobile_output_path = os.path.join(image_dir, f"{base_name}-mobile.webp")
         resize_and_save_webp(input_path, mobile_output_path, 400)
 
-    print("\n--- FV用画像の処理が完了しました ---") 
+    print("\n--- FV用画像の処理が完了しました ---")
+
+    # Facilityコンポーネント用画像のパス
+    facility_images = [
+        "10_room_dining_stove_side.jpg",
+        "16_room_kitchen_close.jpg",
+        "30_room_tokonoma_withdesk_fusumaside.jpg",
+        "25_room_bedroom_view.jpg",
+    ]
+
+    print("\n--- Facility用画像のリサイズ処理を開始します ---")
+    
+    for img_name in facility_images:
+        base_name, ext = os.path.splitext(img_name)
+        input_path = os.path.join(image_dir, img_name)
+        output_path = os.path.join(image_dir, f"{base_name}.webp")
+        resize_and_save_webp(input_path, output_path, 600)
+        
+    print("\n--- Facility用画像の処理が完了しました ---") 
