@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Header from "./components/Header.vue";
 import Fv from "./components/Fv.vue";
 import Impression from "./components/Impression.vue";
@@ -27,21 +27,15 @@ import AccommodationFee from "./components/AccommodationFee.vue";
 import LastPhoto from "./components/LastPhoto.vue";
 import Footer from "./components/Footer.vue";
 
-export default {
-  components: {
-    Header,
-    Fv,
-    Impression,
-    Facility,
-    ExperiencePlan,
-    DuringStay,
-    Access,
-    AccommodationFee,
-    LastPhoto,
-    Footer,
-  },
-};
+import backgroundBeigeUrl from "@/assets/images/logo/background_beige.webp";
+import backgroundNavyUrl from "@/assets/images/logo/background_navy.webp";
+import backgroundKamuiUrl from "@/assets/images/logo/background_kamui.webp";
+
+const backgroundBeige = `url(${backgroundBeigeUrl})`;
+const backgroundNavy = `url(${backgroundNavyUrl})`;
+const backgroundKamui = `url(${backgroundKamuiUrl})`;
 </script>
+
 <style>
 :root {
   --font-size-text: 16px;
@@ -98,19 +92,19 @@ section {
   align-items: center;
 }
 section.beige {
-  background-image: url(import.meta.env.VITE_BACKGROUND_IMAGE_BEIGE);
+  background-image: v-bind(backgroundBeige);
   background-repeat: repeat;
   background-size: auto;
 }
 
 section.navy {
-  background-image: url(import.meta.env.VITE_BACKGROUND_IMAGE_NAVY);
+  background-image: v-bind(backgroundNavy);
   background-repeat: repeat;
   background-size: auto;
 }
 
 section.kamui {
-  background-image: url(import.meta.env.VITE_BACKGROUND_IMAGE_KAMUI);
+  background-image: v-bind(backgroundKamui);
   background-repeat: repeat;
   background-size: auto;
 }
