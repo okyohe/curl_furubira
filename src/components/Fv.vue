@@ -3,7 +3,12 @@
     <div class="white-overlay" :class="{ 'fade-active': isFading }"></div>
     <picture>
       <source :srcset="currentImage.mobile" media="(max-width: 768px)" />
-      <img :src="currentImage.desktop" class="background" alt="背景画像" />
+      <img
+        :src="currentImage.desktop"
+        class="background"
+        alt="背景画像"
+        fetchpriority="high"
+        decoding="async" />
     </picture>
     <div class="overlay">
       <img :src="boxlogo_white" class="logo" alt="ロゴ" />
@@ -26,13 +31,13 @@
 <script setup>
 import { ref, watch, onMounted, onUnmounted } from "vue";
 
-import boxlogo_white from "../assets/images/logo/boxlogo_white.png";
+import boxlogo_white from "../assets/images/logo/boxlogo_white.webp";
 import pillow_desktop from "../assets/images/photos/0_100_white_pillow.webp";
-import pillow_mobile from "../assets/images/photos/0_100_white_pillow-mobile.jpg";
+import pillow_mobile from "../assets/images/photos/0_100_white_pillow-mobile.webp";
 import dining_desktop from "../assets/images/photos/0_101_dining.webp";
-import dining_mobile from "../assets/images/photos/0_101_dining-mobile.jpg";
+import dining_mobile from "../assets/images/photos/0_101_dining-mobile.webp";
 import navypillow_desktop from "../assets/images/photos/0_103_navypillow.webp";
-import navypillow_mobile from "../assets/images/photos/0_103_navypillow-mobile.jpg";
+import navypillow_mobile from "../assets/images/photos/0_103_navypillow-mobile.webp";
 
 // アーティスティック画像のリスト
 const images = [
