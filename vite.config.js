@@ -18,16 +18,4 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  optimizeDeps: {
-    include: ["vite-ssg"],
-  },
-  ssr: {
-    noExternal: ["vite-ssg"],
-  },
-  // vite.config.js
-  ssgOptions: {
-    script: "async",
-    formatting: "minify",
-    entry: "src/entry.js",
-  },
 });

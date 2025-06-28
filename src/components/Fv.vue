@@ -11,7 +11,7 @@
         decoding="async" />
     </picture>
     <div class="overlay">
-      <img :src="boxlogo_white" class="logo" alt="ロゴ" />
+      <img src="/boxlogo_white.webp" class="logo" alt="ロゴ" />
       <div class="vertical-text">
         <h1>
           <span class="highlight">カールふるびら</span>
@@ -31,7 +31,6 @@
 <script setup>
 import { ref, watch, onMounted, onUnmounted } from "vue";
 
-import boxlogo_white from "../assets/images/logo/boxlogo_white.webp";
 import pillow_desktop from "../assets/images/photos/0_100_white_pillow.webp";
 import pillow_mobile from "../assets/images/photos/0_100_white_pillow-mobile.webp";
 import dining_desktop from "../assets/images/photos/0_101_dining.webp";
