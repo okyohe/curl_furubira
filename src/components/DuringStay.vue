@@ -97,6 +97,14 @@
 <script setup>
 import { ref } from "vue";
 import SmallHeading from "./ui/SmallHeading.vue";
+import unidon from "@/assets/images/generated/unidon.webp";
+import sado from "@/assets/images/generated/sado.webp";
+import onsen from "@/assets/images/generated/onsen.webp";
+import cheers from "@/assets/images/generated/cheers.webp";
+import drive from "@/assets/images/generated/drive.webp";
+import bannya from "@/assets/images/generated/bannya.webp";
+import fruitpark from "@/assets/images/generated/fruitpark.webp";
+import whiskey from "@/assets/images/generated/whiskey.webp";
 
 const timelineItems = ref([
   {
@@ -119,19 +127,19 @@ const timelineItems = ref([
 
 const rowImages = ref([
   {
-    src: new URL("@/assets/images/generated/unidon.webp", import.meta.url).href,
+    src: unidon,
     alt: "海鮮丼",
   },
   {
-    src: new URL("@/assets/images/generated/sado.webp", import.meta.url).href,
+    src: sado,
     alt: "茶道",
   },
   {
-    src: new URL("@/assets/images/generated/onsen.webp", import.meta.url).href,
+    src: onsen,
     alt: "Traditional onsen",
   },
   {
-    src: new URL("@/assets/images/generated/cheers.webp", import.meta.url).href,
+    src: cheers,
     alt: "Group gathering",
   },
 ]);
@@ -157,21 +165,19 @@ const timelineItemsDay2 = ref([
 
 const rowImagesDay2 = ref([
   {
-    src: new URL("@/assets/images/generated/drive.webp", import.meta.url).href,
+    src: drive,
     alt: "ドライブ",
   },
   {
-    src: new URL("@/assets/images/generated/bannya.webp", import.meta.url).href,
+    src: bannya,
     alt: "ヤマシメ番屋",
   },
   {
-    src: new URL("@/assets/images/generated/fruitpark.webp", import.meta.url)
-      .href,
+    src: fruitpark,
     alt: "Fruit Park",
   },
   {
-    src: new URL("@/assets/images/generated/whiskey.webp", import.meta.url)
-      .href,
+    src: whiskey,
     alt: "Nikka Whisky Distillery",
   },
 ]);
