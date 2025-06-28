@@ -16,7 +16,7 @@ def resize_images_to_webp(input_dir, output_dir, target_width=400, quality=80):
         print(f"作成されたディレクトリ: {output_dir}")
 
     # 対応する拡張子
-    supported_formats = ['.jpg', '.jpeg', '.png']
+    supported_formats = ['.jpg', '.jpeg', '.png', '.webp']
 
     for filename in os.listdir(input_dir):
         file_path = os.path.join(input_dir, filename)
