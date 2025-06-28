@@ -142,7 +142,7 @@ watch(currentIndex, () => {
 
 .logo {
   width: 50%;
-  max-width: 600px;
+  max-width: 400px;
   height: auto;
   margin-bottom: 20px;
 }
