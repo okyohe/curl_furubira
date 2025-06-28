@@ -87,6 +87,7 @@ section {
   margin: 0 auto;
   position: relative;
   padding: 20px 0;
+  text-align: center;
 }
 .right-content {
   display: flex;
