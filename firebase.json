@@ -21,6 +21,104 @@
             "value": "max-age=31536000"
           }
         ]
+      },
+      {
+        "source": "**/*.css",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/css"
+          }
+        ]
+      },
+      {
+        "source": "**/*.js",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/javascript"
+          }
+        ]
+      },
+      {
+        "source": "**/assets/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          },
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|png|gif|webp|svg|ico)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          },
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      },
+      {
+        "source": "**/*.jpg",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "source": "**/*.jpeg",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "source": "**/*.png",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/png"
+          }
+        ]
+      },
+      {
+        "source": "**/*.webp",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/webp"
+          }
+        ]
+      },
+      {
+        "source": "**/*.svg",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/svg+xml"
+          }
+        ]
+      },
+      {
+        "source": "**/*.gif",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/gif"
+          }
+        ]
       }
     ]
   }

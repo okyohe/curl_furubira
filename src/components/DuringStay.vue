@@ -1,25 +1,19 @@
 ﻿<template>
-  <section>
+  <section :style="{ backgroundImage: `url(${backgroundNavyImg})` }">
     <SmallHeading
       :title-ja="'滞在の楽しみ方'"
       :title-en="'During Stay'"
       :isWhite="true" />
     <div class="content-wrapper content">
-      <!-- Day marker -->
       <h3 class="day-title">
         <div class="day-marker">
           <h4 class="day-number">DAY1</h4>
         </div>
         <span class="day-description"> 秘境ふるびらを味わう </span>
       </h3>
-
-      <!-- Timeline -->
       <div class="timeline">
-        <!-- Left side - Timeline -->
         <div class="timeline-left">
           <div class="timeline-line"></div>
-
-          <!-- Timeline items -->
           <div class="timeline-items">
             <div
               v-for="item in timelineItems"
@@ -29,10 +23,10 @@
                 <div class="marker-circle">{{ item.number }}</div>
               </div>
               <div class="timeline-text">{{ item.text }}</div>
-              <img
+              <!-- <img
                 :src="rowImages[item.number - 1].src"
                 :alt="rowImages[item.number - 1].alt"
-                class="image-item mobile-image" />
+                class="image-item mobile-image" /> -->
             </div>
           </div>
         </div>
@@ -82,10 +76,10 @@
                 <div class="marker-circle">{{ item.number }}</div>
               </div>
               <div class="timeline-text">{{ item.text }}</div>
-              <img
+              <!-- <img
                 :src="rowImagesDay2[item.number - 1].src"
                 :alt="rowImagesDay2[item.number - 1].alt"
-                class="image-item mobile-image" />
+                class="image-item mobile-image" /> -->
             </div>
           </div>
         </div>
@@ -105,6 +99,8 @@ import drive from "@/assets/images/generated/drive.webp";
 import bannya from "@/assets/images/generated/bannya.webp";
 import fruitpark from "@/assets/images/generated/fruitpark.webp";
 import whiskey from "@/assets/images/generated/whiskey.webp";
+import backgroundNavyImg from "@/assets/images/logo/background_navy.webp";
+import backgroundNavyMobileImg from "@/assets/images/logo/background_navy-mobile.webp";
 
 const timelineItems = ref([
   {
@@ -185,7 +181,6 @@ const rowImagesDay2 = ref([
 
 <style scoped>
 section {
-  background-image: url("../assets/images/logo/background_navy.webp");
   color: #e3dac2;
   min-height: 100vh;
   padding: 2rem;
@@ -197,7 +192,7 @@ section {
 
 @media (max-width: 768px) {
   section {
-    background-image: url("../assets/images/logo/background_navy-mobile.webp");
+    background-image: url("v-bind('backgroundNavyMobileImg')");
   }
 }
 
@@ -344,10 +339,6 @@ section {
   overflow: hidden;
 }
 
-.mobile-image {
-  display: none;
-}
-
 @media (max-width: 1000px) {
   .timeline {
     flex-direction: column;
@@ -380,10 +371,6 @@ section {
     display: block;
     width: 100%;
     height: auto;
-  }
-
-  .desktop-image {
-    display: none;
   }
 
   .day2 .timeline {
