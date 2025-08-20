@@ -1,8 +1,7 @@
 // src/entry.js
-import { ViteSSG } from "vite-ssg";
+import { createApp } from "vue";
 import App from "./App.vue";
 import "./assets/index.css";
 
-const routes = [{ path: "/", component: App, name: "home" }];
-
-export const createApp = ViteSSG(App, { routes });
+const app = createApp(App);
+app.mount("#app");

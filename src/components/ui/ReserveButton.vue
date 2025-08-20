@@ -3,22 +3,19 @@
     @click="navigateToAirbnb"
     class="reserve-button text-black py-2 px-4 rounded flex items-center gap-2">
     <img
-      src="@/assets/images/logo/airbnb_logo_navy.png"
+      :src="airbnbLogo"
       alt="Airbnb Logo"
       class="w-6 h-6" />
     ご予約はAirbnbから
   </button>
 </template>
 
-<script>
-export default {
-  name: "ReserveButton",
+<script setup>
+import airbnbLogo from '@/assets/images/logo/airbnb_logo_navy.webp';
+defineExpose({ airbnbLogo });
 
-  methods: {
-    navigateToAirbnb() {
-      window.open("https://www.airbnb.jp/rooms/1186456384717300245", "_blank");
-    },
-  },
+const navigateToAirbnb = () => {
+  window.open("https://www.airbnb.jp/rooms/1186456384717300245", "_blank");
 };
 </script>
 

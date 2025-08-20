@@ -12,7 +12,7 @@
     </picture>
     <div class="overlay">
       <img
-        src="/boxlogo_white.webp"
+        :src="logoImg"
         class="logo"
         alt="ロゴ"
         fetchpriority="high" />
@@ -41,6 +41,7 @@ import dining_desktop from "../assets/images/photos/0_101_dining.webp";
 import dining_mobile from "../assets/images/photos/0_101_dining-mobile.webp";
 import navypillow_desktop from "../assets/images/photos/0_103_navypillow.webp";
 import navypillow_mobile from "../assets/images/photos/0_103_navypillow-mobile.webp";
+import logoImg from "../assets/images/logo/boxlogo_white.png";
 
 // アーティスティック画像のリスト
 const images = [

@@ -1,21 +1,15 @@
 ﻿<template>
-  <footer class="Footer">
+  <footer class="Footer" :style="{ backgroundImage: `url(${backgroundNavyImg})` }">
     <div class="info-container">
       <div class="reserve-container">
         <ReserveButton />
         <div class="social-icons">
-          <!-- <a href="#" class="icon">
-          <img
-            src="@/assets/images/facebook_logo.png"
-            alt="Facebook"
-            class="social-logo" />
-        </a> -->
           <a
             href="https://www.instagram.com/curl_furubira/"
             target="_blank"
             class="icon">
             <img
-              src="@/assets/images/logo/Instagram_logo.png"
+              :src="instagramLogo"
               alt="Instagram"
               class="social-logo" />
           </a>
@@ -23,7 +17,7 @@
       </div>
       <div class="description">
         <img
-          src="@/assets/images/logo/boxlogo_white.png"
+          :src="logoImg"
           alt="カールふるびら"
           class="logo" />
         <div class="text">
@@ -35,19 +29,16 @@
   </footer>
 </template>
 
-<script>
+<script setup>
 import ReserveButton from "./ui/ReserveButton.vue";
-export default {
-  name: "Footer",
-  components: {
-    ReserveButton,
-  },
-};
+import instagramLogo from "@/assets/images/logo/Instagram_logo.png";
+import logoImg from "@/assets/images/logo/boxlogo_white.png";
+import backgroundNavyImg from "@/assets/images/logo/background_navy.webp";
+import backgroundNavyMobileImg from "@/assets/images/logo/background_navy-mobile.webp";
 </script>
 
 <style scoped>
 .Footer {
-  background-image: url("../assets/images/logo/background_navy.webp");
   color: #fff;
   padding: 2rem;
   padding-bottom: 4rem;
@@ -56,7 +47,7 @@ export default {
 
 @media (max-width: 768px) {
   .Footer {
-    background-image: url("../assets/images/logo/background_navy-mobile.webp");
+    background-image: url("v-bind('backgroundNavyMobileImg')");
   }
 }
 
@@ -99,11 +90,35 @@ export default {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
 }
-.description .logo {
-  width: 200px;
+
+.logo {
+  height: 60px;
 }
-.description p {
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.address,
+.email {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .description {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .logo {
+    height: 50px;
+  }
 }
 </style>

@@ -61,7 +61,7 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import SmallHeading from "./ui/SmallHeading.vue";
 import { Card } from "@/components/ui/card";
 import ReserveButton from "@/components/ui/ReserveButton.vue";
@@ -73,132 +73,120 @@ import tokonomaImg from "@/assets/images/photos/30_room_tokonoma_withdesk_fusuma
 import bedroomImg from "@/assets/images/photos/25_room_bedroom_view.webp";
 import boxLogoNavy from "@/assets/images/logo/boxlogo_navy.png";
 // amenity images
-import roomDiningStove from "../assets/images/photos/11_room_dining_stove.webp";
-import roomEntranceFireExtinguisher from "../assets/images/photos/5_room_entrance_fire_extinguisher.webp";
-import roomBedroomKey from "../assets/images/photos/27_room_bedroom_key.webp";
-import roomBathroomBath from "../assets/images/photos/40_room_bathroom_bath.webp";
-import roomBathroomSink from "../assets/images/photos/40_room_bathroom_sink.webp";
-import roomBathroomTowel from "../assets/images/photos/41_room_bathroom_towel.webp";
-import roomBathroomWasherDryer from "../assets/images/photos/41_room_bathroom_washerdryer.webp";
-import roomToiletPull from "../assets/images/photos/50_room_toilet_pull.webp";
+import roomDiningStove from "@/assets/images/photos/11_room_dining_stove.webp";
+import roomEntranceFireExtinguisher from "@/assets/images/photos/5_room_entrance_fire_extinguisher.webp";
+import roomBedroomKey from "@/assets/images/photos/27_room_bedroom_key.webp";
+import roomBathroomBath from "@/assets/images/photos/40_room_bathroom_bath.webp";
+import roomBathroomSink from "@/assets/images/photos/40_room_bathroom_sink.webp";
+import roomBathroomTowel from "@/assets/images/photos/41_room_bathroom_towel.webp";
+import roomBathroomWasherDryer from "@/assets/images/photos/41_room_bathroom_washerdryer.webp";
+import roomToiletPull from "@/assets/images/photos/50_room_toilet_pull.webp";
 import entranceImg from "@/assets/images/photos/5_room_entrance.webp";
 import diningWifiPanelImg from "@/assets/images/photos/12_room_dining_wifipanel.webp";
 import diningFrameImg from "@/assets/images/photos/12_room_dining_frame.webp";
 import entranceSlippersImg from "@/assets/images/photos/5_room_entrance_slippers.webp";
 
-export default {
-  name: "Facility",
-  components: {
-    SmallHeading,
-    Card,
-    ReserveButton,
+// ロゴ画像の定義
+const logo = boxLogoNavy;
+// 縦画像として表示するための画像リスト
+const facilityImages = [
+  {
+    src: roomDiningStove,
+    alt: "ダイニングストーブ",
   },
-  data() {
-    return {
-      // ロゴ画像の定義
-      logo: boxLogoNavy,
-      // 縦画像として表示するための画像リスト
-      facilityImages: [
-        {
-          src: roomDiningStove,
-          alt: "ダイニングストーブ",
-        },
-        {
-          src: diningWifiPanelImg,
-          alt: "ダイニングのWiFiパネル",
-        },
-        {
-          src: diningFrameImg,
-          alt: "ダイニングのフレーム",
-        },
-        {
-          src: roomBathroomBath,
-          alt: "バスルームのバス",
-        },
-      ],
-      subroomImages: [
-        {
-          src: entranceImg,
-          alt: "入口",
-        },
-        {
-          src: roomEntranceFireExtinguisher,
-          alt: "入口の消火器",
-        },
-        {
-          src: roomBedroomKey,
-          alt: "寝室の鍵",
-        },
-        {
-          src: entranceSlippersImg,
-          alt: "入口のスリッパ",
-        },
-      ],
-      amenityImages: [
-        {
-          src: roomBathroomSink,
-          alt: "バスルームのシンク",
-        },
-        {
-          src: roomBathroomTowel,
-          alt: "バスルームのタオル",
-        },
-        {
-          src: roomBathroomWasherDryer,
-          alt: "バスルームの洗濯乾燥機",
-        },
-        {
-          src: roomToiletPull,
-          alt: "トイレのプル",
-        },
-      ],
-      rooms: [
-        {
-          image: diningImg,
-          alt: "食卓画像",
-          title: "食卓",
-          description: "皆で集まれる広々スペース",
-        },
-        {
-          image: kitchenImg,
-          alt: "台所画像",
-          title: "台所",
-          description: "炊飯器、電子レンジ、オーブンを備えております",
-        },
-        {
-          image: tokonomaImg,
-          alt: "床の間画像",
-          title: "床の間",
-          description: "くつろぎの和室でボードゲームや団らんのひとときを",
-        },
-        {
-          image: bedroomImg,
-          alt: "寝室画像",
-          title: "寝室",
-          description: "静かで落ち着いた空間で、心地よい眠りを提供します",
-        },
-      ],
-      amenities: [
-        "枕カバー",
-        "シーツ",
-        "ハンドタオル",
-        "バスタオル",
-        "ドライヤー",
-        "スリッパ",
-        "ヘアアイロン",
-        "トイレットペーパー",
-        "シャンプー",
-        "コンディショナー",
-        "ボディーソープ",
-        "ハンドソープ",
-        "炊飯器",
-        "電子レンジ",
-        "電気ケトル",
-        "Wi-Fi(約200Mbps)",
-      ],
-    };
+  {
+    src: diningWifiPanelImg,
+    alt: "ダイニングのWiFiパネル",
   },
-};
+  {
+    src: diningFrameImg,
+    alt: "ダイニングのフレーム",
+  },
+  {
+    src: roomBathroomBath,
+    alt: "バスルームのバス",
+  },
+];
+const subroomImages = [
+  {
+    src: entranceImg,
+    alt: "入口",
+  },
+  {
+    src: roomEntranceFireExtinguisher,
+    alt: "入口の消火器",
+  },
+  {
+    src: roomBedroomKey,
+    alt: "寝室の鍵",
+  },
+  {
+    src: entranceSlippersImg,
+    alt: "入口のスリッパ",
+  },
+];
+const amenityImages = [
+  {
+    src: roomBathroomSink,
+    alt: "バスルームのシンク",
+  },
+  {
+    src: roomBathroomTowel,
+    alt: "バスルームのタオル",
+  },
+  {
+    src: roomBathroomWasherDryer,
+    alt: "バスルームの洗濯乾燥機",
+  },
+  {
+    src: roomToiletPull,
+    alt: "トイレのプル",
+  },
+];
+const rooms = [
+  {
+    image: diningImg,
+    alt: "食卓画像",
+    title: "食卓",
+    description: "皆で集まれる広々スペース",
+  },
+  {
+    image: kitchenImg,
+    alt: "台所画像",
+    title: "台所",
+    description: "炊飯器、電子レンジ、オーブンを備えております",
+  },
+  {
+    image: tokonomaImg,
+    alt: "床の間画像",
+    title: "床の間",
+    description: "くつろぎの和室でボードゲームや団らんのひとときを",
+  },
+  {
+    image: bedroomImg,
+    alt: "寝室画像",
+    title: "寝室",
+    description: "静かで落ち着いた空間で、心地よい眠りを提供します",
+  },
+];
+const amenities = [
+  "枕カバー",
+  "シーツ",
+  "ハンドタオル",
+  "バスタオル",
+  "ドライヤー",
+  "スリッパ",
+  "ヘアアイロン",
+  "トイレットペーパー",
+  "シャンプー",
+  "コンディショナー",
+  "ボディーソープ",
+  "ハンドソープ",
+  "炊飯器",
+  "電子レンジ",
+  "電気ケトル",
+  "Wi-Fi(約200Mbps)",
+];
 </script>
 
 <style scoped>
@@ -242,6 +230,7 @@ div:nth-of-type(8) {
 .room-image {
   width: 100%;
   height: auto;
+  object-fit: cover;
   margin-bottom: 1rem;
 }
 

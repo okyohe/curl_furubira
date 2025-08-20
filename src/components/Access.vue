@@ -104,7 +104,6 @@ section {
 .logo {
   max-width: 200px;
 }
-
 iframe {
   min-height: 400px;
 }

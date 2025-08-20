@@ -31,45 +31,44 @@ import backgroundBeigeUrl from "@/assets/images/logo/background_beige.webp";
 import backgroundNavyUrl from "@/assets/images/logo/background_navy.webp";
 import backgroundKamuiUrl from "@/assets/images/logo/background_kamui.webp";
 
+// CSSを明示的に読み込み
+import "./assets/index.css";
+
 const backgroundBeige = `url(${backgroundBeigeUrl})`;
 const backgroundNavy = `url(${backgroundNavyUrl})`;
 const backgroundKamui = `url(${backgroundKamuiUrl})`;
 </script>
 
 <style>
+/* 基本的なスタイルを直接埋め込み */
 :root {
   --font-size-text: 16px;
   --font-size-cta: 18px;
   --font-size-heading: 20px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+h1, h2, h3, h4, h5, h6 {
   font-size: var(--font-size-heading);
   font-family: "Zen Old Mincho", serif;
   font-weight: 600;
   font-style: normal;
 }
-button,
-div,
-a {
+
+button, div, a {
   font-size: var(--font-size-cta);
   font-family: "Zen Old Mincho", serif;
   font-weight: 600;
   font-style: normal;
   color: #000333;
 }
-div,
-p,
-span {
+
+div, p, span {
   font-size: var(--font-size-text);
   font-family: "Noto Sans JP", serif;
   font-optical-sizing: auto;
   color: #000333;
 }
+
 section {
   padding: 2rem 0;
 }
@@ -86,11 +85,13 @@ section {
   width: 30px;
   height: 30px;
 }
+
 section {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 section.beige {
   background-image: v-bind(backgroundBeige);
   background-repeat: repeat;
@@ -107,17 +108,5 @@ section.kamui {
   background-image: v-bind(backgroundKamui);
   background-repeat: repeat;
   background-size: auto;
-}
-.tiny-heading-line {
-  border: 0;
-  height: 1px;
-  background-color: #000;
-  margin: 1rem 0;
-}
-
-@media (max-width: 768px) {
-  .content {
-    width: 100%;
-  }
 }
 </style>

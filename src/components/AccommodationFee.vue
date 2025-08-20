@@ -8,17 +8,8 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import SmallHeading from "./ui/SmallHeading.vue";
-import ReserveButton from "./ui/ReserveButton.vue";
-
-export default {
-  name: "AccommodationFee",
-  components: {
-    SmallHeading,
-    ReserveButton,
-  },
-};
 </script>
 
 <style scoped>

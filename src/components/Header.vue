@@ -1,81 +1,49 @@
 ﻿<template>
-  <header
-    class="Header flex items-center justify-between bg-cover"
-    @mouseleave="isOpen = false">
-    <!-- ロゴ -->
+  <header class="Header flex items-center justify-between bg-cover" :style="{ backgroundImage: `url(${backgroundNavyImg})` }">
     <div class="header-logo">
-      <img :src="logoImage" alt="Logo" class="logo-image" />
+      <img :src="logoImg" alt="Logo" class="logo-image" />
     </div>
     <div class="action">
-      <!-- ご予約ボタン -->
       <ReserveButton class="reserve" />
-      <!-- ハンバーガーメニュー -->
-      <div class="hamburger-menu cursor-pointer" @click="toggleMenu">
-        <div :class="['line', isOpen ? 'open-line1' : '']"></div>
-        <div :class="['line', isOpen ? 'open-line2' : '']"></div>
-      </div>
-
-      <!-- モバイルメニュー -->
-      <div
-        v-if="isOpen"
-        class="mobile-menu bg-white text-black p-4"
-        @mouseleave="isOpen = false">
-        <!-- ×ボタン -->
-        <div class="close-button" @click="isOpen = false">&times;</div>
-        <ul>
-          <li class="py-2 cursor-pointer" @click="scrollToSection('facility')">
-            施設のご案内
-          </li>
-
-          <li
-            class="py-2 cursor-pointer"
-            @click="scrollToSection('duringStay')">
-            滞在の楽しみ方
-          </li>
-          <li class="py-2 cursor-pointer" @click="scrollToSection('access')">
-            アクセス
-          </li>
-          <li
-            class="py-2 cursor-pointer"
-            @click="scrollToSection('accommodationFee')">
-            宿泊料金
-          </li>
-        </ul>
-      </div>
+      <!-- <div class="hamburger-menu cursor-pointer" @click="toggleMenu">
+        <div class="line" :class="{ 'open-line1': isMenuOpen }"></div>
+        <div class="line" :class="{ 'open-line2': isMenuOpen }"></div>
+      </div> -->
     </div>
+    <!-- <div v-if="isMenuOpen" class="mobile-menu" :style="{ backgroundImage: `url(${backgroundBeigeImg})` }"> -->
+      <!-- <div class="close-button" @click="toggleMenu">×</div>
+      <nav>
+        <ul>
+          <li><a href="#fv">ホーム</a></li>
+          <li><a href="#impression">印象</a></li>
+          <li><a href="#facility">施設</a></li>
+          <li><a href="#experiencePlan">体験プラン</a></li>
+          <li><a href="#duringStay">滞在の楽しみ方</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#accommodationFee">料金</a></li>
+        </ul>
+      </nav>
+    </div> -->
   </header>
 </template>
 
-<script>
-import logoImage from "@/assets/images/logo/logo.png";
+<script setup>
+import { ref } from 'vue';
 import ReserveButton from "./ui/ReserveButton.vue";
-export default {
-  name: "Header",
-  components: {
-    ReserveButton,
-  },
-  data() {
-    return {
-      logoImage,
-      isOpen: false, // ハンバーガーメニューの開閉状態
-    };
-  },
-  methods: {
-    toggleMenu() {
-      this.isOpen = !this.isOpen;
-    },
-    scrollToSection(sectionId) {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    },
-  },
+import logoImg from "@/assets/images/logo/logo.webp";
+import backgroundNavyImg from "@/assets/images/logo/background_navy.webp";
+import backgroundBeigeImg from "@/assets/images/logo/background_beige.webp";
+import backgroundNavyMobileImg from "@/assets/images/logo/background_navy-mobile.webp";
+import backgroundBeigeMobileImg from "@/assets/images/logo/background_beige-mobile.webp";
+
+const isMenuOpen = ref(false);
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
 };
 </script>
 
 <style scoped>
-/* 全体のヘッダー */
 .Header {
   position: fixed; /* ヘッダーを固定 */
   top: 0; /* 上部に配置 */
@@ -88,7 +56,6 @@ export default {
   padding: 0 16px;
   font-size: var(--font-size-heading);
   z-index: 1000; /* 他の要素の上に表示 */
-  background-image: url("@/assets/images/logo/background_navy.webp");
 }
 
 /* ロゴ */
@@ -133,7 +100,6 @@ export default {
   width: 200px;
   border-radius: 4px;
   z-index: 10;
-  background-image: url("@/assets/images/logo/background_beige.webp");
   font-family: "Zen Old Mincho", serif;
   font-weight: 600;
   font-style: normal;
@@ -146,14 +112,10 @@ export default {
 @media (max-width: 768px) {
   .Header {
     height: 68px;
-    background-image: url("@/assets/images/logo/background_navy-mobile.webp");
   }
 
   .logo-image {
     height: 60px;
-  }
-  .mobile-menu {
-    background-image: url("@/assets/images/logo/background_beige-mobile.webp");
   }
 
   .hamburger-menu .line {
@@ -175,12 +137,5 @@ export default {
   top: 10px;
   right: 15px;
   cursor: pointer;
-}
-
-/* 360px以下の画面幅でheaderのボタンを非表示にする */
-@media (max-width: 450px) {
-  .reserve {
-    display: none;
-  }
 }
 </style>

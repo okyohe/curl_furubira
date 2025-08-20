@@ -1,5 +1,5 @@
 ﻿<template>
-  <section>
+  <section :style="{ backgroundImage: `url(${backgroundImg})` }">
     <div class="first-content content">
       <div class="left-content">
         <div class="text-content">
@@ -9,7 +9,7 @@
         </div>
         <div class="left-image">
           <img
-            src="../assets/images/photos/1_front_view.jpg"
+            :src="frontViewImg"
             alt="カールふるびら正面玄関" />
         </div>
       </div>
@@ -25,7 +25,7 @@
 
         <div class="right-image">
           <img
-            src="../assets/images/photos/500_yohei_watanabe_2.jpg"
+            :src="yoheiImg"
             alt="カールふるびらホスト渡辺洋平" />
         </div>
       </div>
@@ -42,7 +42,7 @@
 
       <div class="logo">
         <img
-          src="../assets/images/logo/boxlogo_navy.png"
+          :src="logoImg"
           alt="Curl Furubira logo" />
       </div>
 
@@ -52,7 +52,7 @@
       <div class="social-links">
         <a href="https://www.instagram.com/curl_furubira/" target="_blank">
           <img
-            src="../assets/images/logo/Instagram_logo_navy.png"
+            :src="instagramLogo"
             alt="Instagram" />
         </a>
       </div>
@@ -60,9 +60,16 @@
   </section>
 </template>
 
+<script setup>
+import frontViewImg from "@/assets/images/photos/1_front_view.jpg";
+import yoheiImg from "@/assets/images/photos/500_yohei_watanabe_2.jpg";
+import logoImg from "@/assets/images/logo/boxlogo_navy.png";
+import instagramLogo from "@/assets/images/logo/Instagram_logo_navy.png";
+import backgroundImg from "@/assets/images/logo/background_beige.webp";
+</script>
+
 <style scoped>
 section {
-  background-image: url("../assets/images/logo/background_beige.webp");
   background-repeat: repeat;
   display: flex;
   flex-direction: column;
